@@ -29,6 +29,9 @@
     "consentTextBefore": "I agree that Peter may use these details to contact me about my intake. See the",
     "consentLinkText": "privacy policy",
     "submitCta": "Send intake request",
-    "formNote": "This opens your email app with the completed request. No details are stored on this website."
+    "submittingLabel": "Sending…",
+    "formNote": "Your details are sent directly to Peter by email. No details are stored on this website.",
+    "successMessage": "Thanks — your intake request is on its way. Peter will reply personally soon.",
+    "errorFallback": "Something went wrong sending your request. Please try again or email directly."
   }
 }

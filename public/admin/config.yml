@@ -389,7 +389,10 @@ collections:
               - { label: "Consent text before the ‘privacy policy’ link", name: consentTextBefore, widget: text }
               - { label: "‘Privacy policy’ link text", name: consentLinkText, widget: string }
               - { label: "Submit button text", name: submitCta, widget: string }
+              - { label: "Submit button text while sending", name: submittingLabel, widget: string }
               - { label: "Note under the submit button", name: formNote, widget: text }
+              - { label: "Message shown after a successful submission", name: successMessage, widget: text }
+              - { label: "Fallback error message (used if the server doesn't give a more specific one)", name: errorFallback, widget: text }
 
   - name: legal
     label: Legal (Privacy & Terms)
