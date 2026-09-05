@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "eyebrow": "No pressure · No obligation",
+    "title": "LET’S START A",
+    "outline": "CONVERSATION.",
+    "intro": "Tell Peter a little about yourself and what you want from training. He’ll reply personally to arrange your free intake."
+  },
+  "steps": {
+    "eyebrow": "What happens next",
+    "items": [
+      { "number": "01", "title": "Send a message", "text": "Share your goals, experience and preferred training times." },
+      { "number": "02", "title": "Meet Peter", "text": "Have a relaxed conversation and visit TrueNorth Gym." },
+      { "number": "03", "title": "Make a plan", "text": "If it feels right, choose the coaching format that suits you." }
+    ],
+    "emailPrompt": "Prefer email? peter.dobson.fitness@gmail.com ↗"
+  },
+  "form": {
+    "nameLabel": "Your name",
+    "namePlaceholder": "First and last name",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "phoneLabel": "Phone",
+    "phoneOptional": "optional",
+    "phonePlaceholder": "+31",
+    "goalLabel": "What would you like help with?",
+    "goalPlaceholder": "Tell Peter about your goals, training experience, or anything else that matters.",
+    "availabilityLabel": "When do you prefer to train?",
+    "availabilityPlaceholder": "Mornings, evenings, specific days…",
+    "consentTextBefore": "I agree that Peter may use these details to contact me about my intake. See the",
+    "consentLinkText": "privacy policy",
+    "submitCta": "Send intake request",
+    "formNote": "This opens your email app with the completed request. No details are stored on this website."
+  }
+}

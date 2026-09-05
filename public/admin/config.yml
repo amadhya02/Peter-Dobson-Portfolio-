@@ -1,0 +1,423 @@
+backend:
+  name: github
+  repo: TODO-set-after-pushing-to-github/peter-dobson-portfolio
+  branch: main
+  auth_endpoint: api/auth
+
+# Production login (on Vercel) talks to the OAuth proxy at app/api/auth and
+# app/api/callback. Before it'll work you need to:
+#   1. Push this repo to GitHub and fix the `repo:` line above to match.
+#   2. Create a GitHub OAuth App (github.com/settings/developers -> New OAuth App)
+#      with "Authorization callback URL" set to https://<your-vercel-domain>/api/callback
+#   3. Add GITHUB_OAUTH_CLIENT_ID and GITHUB_OAUTH_CLIENT_SECRET as environment
+#      variables in the Vercel project settings (Production + Preview).
+#
+# Locally, `npm run cms` (decap-server) proxies straight to the filesystem
+# instead, so none of the above is needed for local editing.
+local_backend: true
+
+media_folder: public/assets
+public_folder: /assets
+
+collections:
+  - name: shared
+    label: Site-wide (nav, footer, brand)
+    files:
+      - name: shared
+        label: Shared content
+        file: content/cms/shared.json
+        fields:
+          - label: Brand
+            name: brand
+            widget: object
+            fields:
+              - { label: Site name, name: name, widget: string }
+              - { label: Tagline, name: tagline, widget: string }
+          - label: Navigation
+            name: nav
+            widget: object
+            fields:
+              - { label: "Coaching link", name: coaching, widget: string }
+              - { label: "About link", name: about, widget: string }
+              - { label: "The gym link", name: gym, widget: string }
+              - { label: "Pricing link", name: pricing, widget: string }
+              - { label: "Mobile menu ‘book intake’ link", name: bookIntakeMobile, widget: string }
+              - { label: "Header CTA button", name: headerCta, widget: string }
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - { label: "Coaching link", name: coaching, widget: string }
+              - { label: "About link", name: about, widget: string }
+              - { label: "Gym link (home page)", name: gymHome, widget: string }
+              - { label: "Gym link (sub-pages)", name: gymSubpage, widget: string }
+              - { label: "Privacy link", name: privacy, widget: string }
+              - { label: "Terms link", name: terms, widget: string }
+              - { label: "Instagram label", name: instagramLabel, widget: string }
+              - { label: "Instagram URL", name: instagramUrl, widget: string }
+              - { label: "Contact email", name: email, widget: string }
+              - { label: "Copyright suffix (after the © year)", name: copyrightSuffix, widget: string }
+
+  - name: seo
+    label: SEO (page titles & descriptions)
+    files:
+      - name: seo
+        label: SEO content
+        file: content/cms/seo.json
+        fields:
+          - { label: "Site URL (used for the sitemap and social sharing previews)", name: siteUrl, widget: string }
+          - { label: Home, name: home, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text, required: false }] }
+          - { label: About, name: about, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text, required: false }] }
+          - { label: Coaching, name: coaching, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text, required: false }] }
+          - { label: Gym, name: gym, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text, required: false }] }
+          - { label: Pricing, name: pricing, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text, required: false }] }
+          - { label: Intake, name: intake, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text, required: false }] }
+          - { label: Privacy, name: privacy, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text, required: false }] }
+          - { label: Terms, name: terms, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text, required: false }] }
+
+  - name: media
+    label: Images & logos
+    files:
+      - name: media
+        label: Site images
+        file: content/cms/media.json
+        fields:
+          - { label: "Hero photo (home + about pages)", name: heroPhoto, widget: image }
+          - { label: "Hero photo alt text", name: heroPhotoAlt, widget: string }
+          - { label: "TrueNorth Gym logo", name: gymLogo, widget: image }
+          - { label: "Gym logo alt text", name: gymLogoAlt, widget: string }
+
+  - name: home
+    label: Home page
+    files:
+      - name: home
+        label: Home page content
+        file: content/cms/home.json
+        fields:
+          - label: Hero section
+            name: hero
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "Heading line 1", name: headingLine1, widget: string }
+              - { label: "Heading line 2", name: headingLine2, widget: string }
+              - { label: "Heading emphasis (end of line 2)", name: headingEm, widget: string }
+              - { label: Intro paragraph, name: intro, widget: text }
+              - { label: "Primary button text", name: primaryCta, widget: string }
+              - { label: "Secondary link text", name: secondaryCta, widget: string }
+              - { label: "‘Now taking on clients’ pill text", name: statusPill, widget: string }
+              - { label: "Circular stamp text", name: stampLine, widget: string }
+              - { label: "Circular stamp monogram", name: stampMonogram, widget: string }
+              - label: "Proof stats (the 3 numbers under the buttons)"
+                name: proof
+                widget: list
+                fields:
+                  - { label: Value, name: value, widget: string }
+                  - { label: "Label line 1", name: labelLine1, widget: string }
+                  - { label: "Label line 2", name: labelLine2, widget: string }
+          - label: "Scrolling ticker phrases"
+            name: ticker
+            widget: list
+            field: { label: Phrase, name: phrase, widget: string }
+          - label: "Coaching cards section"
+            name: coaching
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "Heading line 1", name: headingLine1, widget: string }
+              - { label: "Heading emphasis (line 2)", name: headingEm, widget: string }
+              - { label: Intro paragraph, name: intro, widget: text }
+              - label: "3 cards (order matches the page: One-to-one, Small group, Free welcome)"
+                name: cards
+                widget: list
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Body text, name: text, widget: text }
+                  - { label: "Link text", name: cta, widget: string }
+          - label: "Meet your coach section"
+            name: about
+            widget: object
+            fields:
+              - { label: "Visual badge line 1", name: visualHeadingLine1, widget: string }
+              - { label: "Visual badge line 2", name: visualHeadingLine2, widget: string }
+              - { label: "Visual badge emphasis (line 3)", name: visualHeadingEm, widget: string }
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "Heading line 1", name: headingLine1, widget: string }
+              - { label: "Heading line 2", name: headingLine2, widget: string }
+              - { label: "Heading emphasis (end of line 2)", name: headingEm, widget: string }
+              - { label: "Lead sentence", name: lead, widget: text }
+              - { label: "Body paragraph", name: text, widget: text }
+              - { label: "Pull quote (no quote marks needed)", name: quote, widget: text }
+              - { label: "Button text", name: cta, widget: string }
+          - label: "How it works section"
+            name: process
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "Heading line 1", name: headingLine1, widget: string }
+              - { label: "Heading emphasis", name: headingEm, widget: string }
+              - label: "3 steps"
+                name: steps
+                widget: list
+                fields:
+                  - { label: Number, name: number, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+          - label: "TrueNorth gym section"
+            name: gym
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "Heading line 1", name: headingLine1, widget: string }
+              - { label: "Heading emphasis (line 2)", name: headingEm, widget: string }
+              - { label: "Body text", name: text, widget: text }
+              - { label: "Primary button text", name: primaryCta, widget: string }
+              - { label: "Secondary link text", name: secondaryCta, widget: string }
+          - label: "Final call-to-action section"
+            name: finalCta
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "Heading line 1", name: headingLine1, widget: string }
+              - { label: "Heading line 2", name: headingLine2, widget: string }
+              - { label: "Heading emphasis (end of line 2)", name: headingEm, widget: string }
+              - { label: "Body text", name: text, widget: text }
+              - { label: "Button text", name: cta, widget: string }
+
+  - name: about_page
+    label: About page
+    files:
+      - name: about
+        label: About page content
+        file: content/cms/about.json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "Title (line 1, plain)", name: title, widget: string }
+              - { label: "Outline (line 2, outlined style)", name: outline, widget: string }
+              - { label: Intro, name: intro, widget: text }
+          - label: Story section
+            name: story
+            widget: object
+            fields:
+              - { label: "Photo tag line 1", name: imageTagLine1, widget: string }
+              - { label: "Photo tag line 2", name: imageTagLine2, widget: string }
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "Heading line 1", name: headingLine1, widget: string }
+              - { label: "Heading line 2", name: headingLine2, widget: string }
+              - { label: "Lead sentence", name: lead, widget: text }
+              - { label: "Paragraph 1", name: paragraph1, widget: text }
+              - { label: "Paragraph 2", name: paragraph2, widget: text }
+              - { label: "Pull quote (no quote marks needed)", name: quote, widget: text }
+              - { label: "Button text", name: cta, widget: string }
+          - label: "4 values"
+            name: values
+            widget: list
+            fields:
+              - { label: Number, name: number, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+
+  - name: coaching_page
+    label: Coaching page
+    files:
+      - name: coaching
+        label: Coaching page content
+        file: content/cms/coaching.json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "Title (line 1, plain)", name: title, widget: string }
+              - { label: "Outline (line 2, outlined style)", name: outline, widget: string }
+              - { label: Intro, name: intro, widget: text }
+          - label: "3 offers (order: One-to-one, Small group, Single session)"
+            name: offers
+            widget: list
+            fields:
+              - { label: "Number label", name: number, widget: string }
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "Heading line 1", name: headingLine1, widget: string }
+              - { label: "Heading line 2", name: headingLine2, widget: string }
+              - { label: "Body text", name: text, widget: text }
+              - { label: "Bullet list", name: bullets, widget: list, field: { label: Bullet, name: bullet, widget: string } }
+              - { label: "Link/button text", name: cta, widget: string }
+          - label: "Bottom call-to-action band"
+            name: bandCta
+            widget: object
+            fields:
+              - { label: "Heading line 1", name: headingLine1, widget: string }
+              - { label: "Heading emphasis (line 2)", name: headingEm, widget: string }
+              - { label: "Button text", name: cta, widget: string }
+
+  - name: gym_page
+    label: Gym page
+    files:
+      - name: gym
+        label: Gym page content
+        file: content/cms/gym.json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "Title (line 1, plain)", name: title, widget: string }
+              - { label: "Outline (line 2, outlined style)", name: outline, widget: string }
+              - { label: Intro, name: intro, widget: text }
+          - label: Feature section
+            name: feature
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "Heading line 1", name: headingLine1, widget: string }
+              - { label: "Heading line 2", name: headingLine2, widget: string }
+              - { label: "Body text", name: text, widget: text }
+              - { label: "Feature list", name: list, widget: list, field: { label: Feature, name: feature, widget: string } }
+              - { label: "Primary button text", name: primaryCta, widget: string }
+              - { label: "Secondary link text", name: secondaryCta, widget: string }
+          - label: "Location strip"
+            name: location
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "Heading line 1", name: headingLine1, widget: string }
+              - { label: "Heading emphasis (line 2)", name: headingEm, widget: string }
+              - { label: "Visit title", name: visitTitle, widget: string }
+              - { label: "Visit text", name: visitText, widget: text }
+              - { label: "Button text", name: cta, widget: string }
+
+  - name: pricing_page
+    label: Pricing page
+    files:
+      - name: pricing
+        label: Pricing page content
+        file: content/cms/pricing.json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "Title (line 1, plain)", name: title, widget: string }
+              - { label: "Outline (line 2, outlined style)", name: outline, widget: string }
+              - { label: Intro, name: intro, widget: text }
+          - label: "4 pricing plans"
+            name: plans
+            widget: list
+            fields:
+              - { label: "Small tag above the title", name: tag, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Price, name: price, widget: string }
+              - { label: "Price suffix", name: suffix, widget: string }
+              - { label: "Body text", name: text, widget: text }
+              - { label: "Highlight this plan?", name: featured, widget: boolean, default: false }
+          - { label: "Plan card link text (same on every card)", name: planCta, widget: string }
+          - { label: "Note below the plans", name: note, widget: text }
+          - { label: "Note button text", name: noteCta, widget: string }
+
+  - name: intake_page
+    label: Intake page
+    files:
+      - name: intake
+        label: Intake page content
+        file: content/cms/intake.json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: "Title (line 1, plain)", name: title, widget: string }
+              - { label: "Outline (line 2, outlined style)", name: outline, widget: string }
+              - { label: Intro, name: intro, widget: text }
+          - label: "‘What happens next’ sidebar"
+            name: steps
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - label: "3 steps"
+                name: items
+                widget: list
+                fields:
+                  - { label: Number, name: number, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+              - { label: "‘Prefer email’ line", name: emailPrompt, widget: string }
+          - label: Form labels
+            name: form
+            widget: object
+            fields:
+              - { label: "Name field label", name: nameLabel, widget: string }
+              - { label: "Name field placeholder", name: namePlaceholder, widget: string }
+              - { label: "Email field label", name: emailLabel, widget: string }
+              - { label: "Email field placeholder", name: emailPlaceholder, widget: string }
+              - { label: "Phone field label", name: phoneLabel, widget: string }
+              - { label: "‘(optional)’ text next to phone label", name: phoneOptional, widget: string }
+              - { label: "Phone field placeholder", name: phonePlaceholder, widget: string }
+              - { label: "Goal field label", name: goalLabel, widget: string }
+              - { label: "Goal field placeholder", name: goalPlaceholder, widget: text }
+              - { label: "Availability field label", name: availabilityLabel, widget: string }
+              - { label: "Availability field placeholder", name: availabilityPlaceholder, widget: string }
+              - { label: "Consent text before the ‘privacy policy’ link", name: consentTextBefore, widget: text }
+              - { label: "‘Privacy policy’ link text", name: consentLinkText, widget: string }
+              - { label: "Submit button text", name: submitCta, widget: string }
+              - { label: "Note under the submit button", name: formNote, widget: text }
+
+  - name: legal
+    label: Legal (Privacy & Terms)
+    files:
+      - name: legal
+        label: Legal content
+        file: content/cms/legal.json
+        fields:
+          - label: Privacy policy
+            name: privacy
+            widget: object
+            fields:
+              - label: Hero
+                name: hero
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: "Title (line 1, plain)", name: title, widget: string }
+                  - { label: "Outline (line 2, outlined style)", name: outline, widget: string }
+                  - { label: Intro, name: intro, widget: text }
+              - { label: "Intro paragraph above the numbered sections", name: intro, widget: text }
+              - label: "Numbered sections"
+                name: sections
+                widget: list
+                fields:
+                  - { label: "Section title", name: title, widget: string }
+                  - label: Paragraphs
+                    name: paragraphs
+                    widget: list
+                    field: { label: Paragraph, name: paragraph, widget: text, hint: "Use the literal text {{email}} anywhere you want the contact email to appear as a clickable link." }
+          - label: Terms & conditions
+            name: terms
+            widget: object
+            fields:
+              - label: Hero
+                name: hero
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: "Title (line 1, plain)", name: title, widget: string }
+                  - { label: "Outline (line 2, outlined style)", name: outline, widget: string }
+                  - { label: Intro, name: intro, widget: text }
+              - { label: "Business address block (left)", name: metaLeftLines, widget: list, field: { label: Line, name: line, widget: string } }
+              - { label: "KvK / entity block (right)", name: metaRightLines, widget: list, field: { label: Line, name: line, widget: string } }
+              - { label: "Intro paragraph above the numbered sections", name: intro, widget: text }
+              - label: "Numbered sections"
+                name: sections
+                widget: list
+                fields:
+                  - { label: "Section title", name: title, widget: string }
+                  - { label: "Section text", name: text, widget: text }
+              - { label: "Closing statement", name: closing, widget: text }

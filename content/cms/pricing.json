@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "eyebrow": "Straightforward pricing",
+    "title": "INVEST IN",
+    "outline": "PROGRESS.",
+    "intro": "Choose the level of support that matches your goals. We’ll confirm the right option together during your free intake."
+  },
+  "plans": [
+    {
+      "tag": "Build a rhythm",
+      "title": "3 months",
+      "price": "€60",
+      "suffix": "from / session",
+      "text": "Weekly personal training for three months—ideal for building momentum, confidence and a consistent routine.",
+      "featured": true
+    },
+    {
+      "tag": "Long-term progress",
+      "title": "12 months",
+      "price": "€54",
+      "suffix": "from / session",
+      "text": "Ongoing coaching at the best session rate, for people ready to make strength training a lasting habit.",
+      "featured": false
+    },
+    {
+      "tag": "Kickstart",
+      "title": "Monthly",
+      "price": "€150",
+      "suffix": "/ month",
+      "text": "A three-month contract including two sessions, an individual schedule and consistent feedback.",
+      "featured": false
+    },
+    {
+      "tag": "Learn a skill",
+      "title": "Single session",
+      "price": "€70",
+      "suffix": "/ session",
+      "text": "A focused one-off session for a specific lift or goal, with no ongoing contract.",
+      "featured": false
+    }
+  ],
+  "planCta": "Choose this plan",
+  "note": "All prices are shown in euros. Final programme structure and session frequency are agreed during intake.",
+  "noteCta": "Book your free intake"
+}

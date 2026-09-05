@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Site Editor · Peter Dobson Fitness</title>
+    <!-- The URL bar shows /admin (no trailing slash, via a rewrite to this
+         file), so without this, decap-cms's relative "config.yml" fetch
+         would resolve against "/" instead of "/admin/". -->
+    <base href="/admin/" />
+  </head>
+  <body>
+    <!-- Decap CMS mounts itself here, driven by ./config.yml -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  </body>
+</html>

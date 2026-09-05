@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.next/
+.DS_Store
+
+# local env files (GitHub OAuth secrets for Decap CMS, etc.)
+.env*.local

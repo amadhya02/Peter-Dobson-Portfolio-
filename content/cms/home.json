@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "eyebrow": "Personal training · Amsterdam",
+    "headingLine1": "STRONGER",
+    "headingLine2": "STARTS",
+    "headingEm": "HERE.",
+    "intro": "Build lasting strength, move with confidence, and train with a plan that fits your life—not the other way around.",
+    "primaryCta": "Book your free intake",
+    "secondaryCta": "Explore coaching",
+    "statusPill": "Now taking on clients",
+    "stampLine": "TRAIN SMARTER · LIVE STRONGER · ",
+    "stampMonogram": "PD",
+    "proof": [
+      { "value": "1:1", "labelLine1": "Focused", "labelLine2": "coaching" },
+      { "value": "100%", "labelLine1": "Personalised", "labelLine2": "programming" },
+      { "value": "AMS", "labelLine1": "TrueNorth", "labelLine2": "Gym" }
+    ]
+  },
+  "ticker": ["BUILD STRENGTH", "MOVE BETTER", "FEEL CONFIDENT", "TRAIN FOR LIFE"],
+  "coaching": {
+    "eyebrow": "Coaching built around you",
+    "headingLine1": "YOUR GOALS.",
+    "headingEm": "YOUR PROGRAM.",
+    "intro": "No generic templates. Every session and programme starts with where you are, then builds deliberately towards where you want to be.",
+    "cards": [
+      {
+        "label": "Personal coaching",
+        "title": "One-to-one training",
+        "text": "Dedicated sessions, precise technique coaching and a programme designed entirely around your goals.",
+        "cta": "Start your journey"
+      },
+      {
+        "label": "Train together",
+        "title": "Small group training",
+        "text": "Expert coaching and shared energy in a focused, welcoming group at TrueNorth Gym.",
+        "cta": "View the schedule"
+      },
+      {
+        "label": "Your next step",
+        "title": "Free welcome session",
+        "text": "Meet Peter, see the gym and talk through what good training could look like for you.",
+        "cta": "Book a welcome"
+      }
+    ]
+  },
+  "about": {
+    "visualHeadingLine1": "COACH.",
+    "visualHeadingLine2": "ATHLETE.",
+    "visualHeadingEm": "ALLY.",
+    "eyebrow": "Meet your coach",
+    "headingLine1": "TRAINING SHOULD",
+    "headingLine2": "MAKE LIFE",
+    "headingEm": "BETTER.",
+    "lead": "I’m Peter—a coach who believes strength is about far more than the number on the bar.",
+    "text": "My job is to make training clear, motivating and sustainable. Whether you’re new to the gym or chasing your next milestone, we’ll build the confidence and capability to keep progressing.",
+    "quote": "The best programme is one that challenges you—and still fits your real life.",
+    "cta": "Let’s work together"
+  },
+  "process": {
+    "eyebrow": "Simple by design",
+    "headingLine1": "HOW IT",
+    "headingEm": "WORKS.",
+    "steps": [
+      { "number": "01", "title": "Talk", "text": "We start with a relaxed intake about you, your training history and what you want to achieve." },
+      { "number": "02", "title": "Plan", "text": "You get a focused programme built around your goals, schedule and starting point." },
+      { "number": "03", "title": "Progress", "text": "Train with coaching, track what matters and keep adapting as you get stronger." }
+    ]
+  },
+  "gym": {
+    "eyebrow": "Your training space",
+    "headingLine1": "WELCOME TO",
+    "headingEm": "TRUENORTH.",
+    "text": "A friendly, specialist gym where everyone can train seriously without taking themselves too seriously.",
+    "primaryCta": "Explore the gym",
+    "secondaryCta": "Memberships →"
+  },
+  "finalCta": {
+    "eyebrow": "Ready when you are",
+    "headingLine1": "YOUR STRONGEST",
+    "headingLine2": "CHAPTER",
+    "headingEm": "STARTS NOW.",
+    "text": "Come in, meet Peter and discover a smarter way to train. Your first conversation is free.",
+    "cta": "Book your free intake"
+  }
+}

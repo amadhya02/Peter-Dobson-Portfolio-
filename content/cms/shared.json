@@ -1,0 +1,26 @@
+{
+  "brand": {
+    "name": "PETER DOBSON",
+    "tagline": "PERSONAL TRAINING"
+  },
+  "nav": {
+    "coaching": "Coaching",
+    "about": "About",
+    "gym": "The gym",
+    "pricing": "Pricing",
+    "bookIntakeMobile": "Book an intake ↗",
+    "headerCta": "Book an intake"
+  },
+  "footer": {
+    "coaching": "Coaching",
+    "about": "About",
+    "gymHome": "TrueNorth Gym",
+    "gymSubpage": "TrueNorth Gym",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "instagramLabel": "Instagram ↗",
+    "instagramUrl": "https://www.instagram.com/peter.dobson.fitness/",
+    "email": "peter.dobson.fitness@gmail.com",
+    "copyrightSuffix": "Peter Dobson Fitness · KvK 91965713"
+  }
+}

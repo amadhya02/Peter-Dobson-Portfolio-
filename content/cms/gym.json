@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "eyebrow": "Your training space",
+    "title": "FIND YOUR",
+    "outline": "TRUE NORTH.",
+    "intro": "Specialist equipment, friendly people and a training-first atmosphere in Amsterdam."
+  },
+  "feature": {
+    "eyebrow": "Built for better training",
+    "headingLine1": "SMALL GYM.",
+    "headingLine2": "BIG ENERGY.",
+    "text": "TrueNorth is a focused independent gym created for people who care about good training. You’ll find quality strength equipment, expert support and a community that makes showing up easier.",
+    "list": ["Specialist strength equipment", "Personal coaching", "Small group classes", "Friendly atmosphere"],
+    "primaryCta": "Visit TrueNorth",
+    "secondaryCta": "Book a welcome →"
+  },
+  "location": {
+    "eyebrow": "Come say hello",
+    "headingLine1": "TRAIN IN",
+    "headingEm": "AMSTERDAM.",
+    "visitTitle": "Your first visit",
+    "visitText": "Book a welcome session to meet Peter, look around the gym and talk about your goals—without pressure or obligation.",
+    "cta": "Plan your visit"
+  }
+}

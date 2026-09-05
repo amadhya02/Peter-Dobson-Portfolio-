@@ -1,0 +1,67 @@
+{
+  "privacy": {
+    "hero": { "eyebrow": "Legal · Nederlands", "title": "PRIVACY", "outline": "BELEID.", "intro": "Hoe Peter Dobson Fitness uw persoonsgegevens verzamelt, gebruikt en beschermt." },
+    "intro": "Dit privacybeleid beschrijft hoe Peter Dobson Fitness (“de Opdrachtnemer”) omgaat met persoonlijke informatie bij het gebruik van onze diensten en website. Wij behandelen uw gegevens veilig en verantwoord.",
+    "sections": [
+      {
+        "title": "1. Verzameling van Persoonlijke Gegevens",
+        "paragraphs": [
+          "Peter Dobson Fitness verzamelt gegevens die u verstrekt wanneer u zich aanmeldt, een afspraak maakt of contact opneemt. Dit kan gaan om naam, adres, e-mailadres, telefoonnummer, geboortedatum en gezondheidsinformatie via de PAR-Q.",
+          "Bij websitebezoek kunnen automatisch technische gegevens worden verzameld, zoals IP-adres, browsertype, besturingssysteem en bezochte pagina’s."
+        ]
+      },
+      {
+        "title": "2. Gebruik van Persoonlijke Gegevens",
+        "paragraphs": [
+          "Uw gegevens worden gebruikt om personal training te leveren, afspraken en betalingen te beheren, met u te communiceren en uw veiligheid tijdens trainingen te ondersteunen.",
+          "Voor onze dienstverlening gebruiken wij onder meer Make.com, Virtuagym en Google. Virtuagym is een onafhankelijke dienst met een eigen privacybeleid en voorwaarden."
+        ]
+      },
+      {
+        "title": "3. Delen van Persoonlijke Gegevens",
+        "paragraphs": ["Gegevens worden alleen met derden gedeeld met uw uitdrukkelijke toestemming, wanneer dit nodig is voor de dienstverlening, of wanneer Peter Dobson Fitness daartoe wettelijk verplicht is."]
+      },
+      {
+        "title": "4. Beveiliging",
+        "paragraphs": ["Er worden passende technische en organisatorische maatregelen genomen om gegevens te beschermen tegen ongeautoriseerde toegang, verlies, misbruik of vernietiging."]
+      },
+      {
+        "title": "5. Bewaartermijn",
+        "paragraphs": ["Persoonlijke gegevens worden niet langer bewaard dan noodzakelijk voor de doeleinden waarvoor ze zijn verzameld, tenzij de wet een langere termijn vereist."]
+      },
+      {
+        "title": "6. Uw Rechten",
+        "paragraphs": [
+          "U kunt verzoeken om inzage, correctie of verwijdering van uw gegevens. Ook kunt u bezwaar maken tegen verwerking of eerder gegeven toestemming intrekken.",
+          "Stuur uw verzoek naar {{email}}."
+        ]
+      },
+      {
+        "title": "7. Wijzigingen",
+        "paragraphs": ["Dit beleid kan worden gewijzigd. De meest recente versie wordt altijd op deze pagina gepubliceerd."]
+      },
+      {
+        "title": "8. Contact",
+        "paragraphs": ["Vragen over privacy of gegevensverwerking? Neem contact op via {{email}}."]
+      }
+    ]
+  },
+  "terms": {
+    "hero": { "eyebrow": "Legal · Nederlands", "title": "ALGEMENE", "outline": "VOORWAARDEN.", "intro": "De afspraken die gelden voor personal training bij Peter Dobson Fitness." },
+    "metaLeftLines": ["Peter Dobson Fitness", "Potgieterstraat 61-1", "1053 XT Amsterdam"],
+    "metaRightLines": ["KvK 91965713", "Hierna: “Opdrachtnemer”"],
+    "intro": "Door gebruik te maken van de diensten stemt de Opdrachtgever ermee in aan deze voorwaarden gebonden te zijn. Afwijkingen zijn alleen geldig wanneer deze schriftelijk zijn overeengekomen. Wettelijke consumentenrechten blijven van toepassing.",
+    "sections": [
+      { "title": "1. Diensten", "text": "Peter Dobson Fitness levert personal training zoals overeengekomen. Tenzij anders afgesproken vinden de diensten plaats op de locatie van de Opdrachtnemer. Training op een andere locatie moet vooraf worden overeengekomen en kan extra kosten met zich meebrengen." },
+      { "title": "2. Betaling", "text": "De Opdrachtgever betaalt de overeengekomen vergoeding volgens de vastgestelde tarieven. Betaling vindt vóór aanvang van de diensten plaats, tenzij schriftelijk anders overeengekomen." },
+      { "title": "3. Annulering en Verzetten", "text": "Afspraken dienen minimaal 24 uur van tevoren te worden geannuleerd of verzet. Bij een latere annulering kan een vergoeding worden berekend. De Opdrachtnemer kan bij onvoorziene omstandigheden een afspraak verzetten en zal zich inspannen om een nieuw moment te plannen." },
+      { "title": "4. Verantwoordelijkheden", "text": "De Opdrachtgever volgt de trainingsinstructies op en erkent dat fysieke activiteit risico’s meebrengt. Relevante gezondheidsproblemen, blessures en beperkingen moeten vóór deelname worden gemeld." },
+      { "title": "5. Vertrouwelijkheid en Privacy", "text": "Persoonlijke informatie wordt niet zonder toestemming gedeeld, tenzij wettelijk verplicht. Tijdens trainingen kunnen foto’s of video’s voor promotie worden gemaakt, tenzij de Opdrachtgever uitdrukkelijk aangeeft dit niet te willen." },
+      { "title": "6. Gezondheidsverklaring", "text": "De Opdrachtgever verklaart de PAR-Q naar waarheid te hebben ingevuld, fysiek in staat te zijn om deel te nemen en relevante medische informatie te delen. Deelname gebeurt op eigen risico." },
+      { "title": "7. Toepasselijk Recht", "text": "Op deze voorwaarden is Nederlands recht van toepassing. Eventuele geschillen worden voorgelegd aan de bevoegde rechtbank in Amsterdam." },
+      { "title": "8. Digitale Oplossingen", "text": "Voor de dienstverlening worden systemen van onder meer Make.com, Virtuagym en Google gebruikt. De Opdrachtgever stemt ermee in dat gedeelde persoonsgegevens in deze systemen worden verwerkt." },
+      { "title": "9. Voorwaarden van de Sportschool", "text": "De Opdrachtgever is ook gebonden aan de voorwaarden, regels en voorschriften van de sportschool waar de training wordt uitgevoerd." }
+    ],
+    "closing": "Door gebruik te maken van de diensten verklaart de Opdrachtgever deze voorwaarden te hebben gelezen, begrepen en geaccepteerd."
+  }
+}
