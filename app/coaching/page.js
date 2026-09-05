@@ -20,7 +20,7 @@ export default function CoachingPage() {
           ? <Link className={link.className} href={link.href}>{offer.cta} <span>{link.arrow}</span></Link>
           : <a className={link.className} href={link.href}>{offer.cta} <span>{link.arrow}</span></a>;
         return (
-          <article className={`offer reveal${i === 1 ? ' offer-dark' : ''}`} key={offer.number}>
+          <article className={`offer reveal-scale${i === 1 ? ' offer-dark' : ''}`} key={offer.number}>
             <span className="offer-no">{offer.number}</span>
             <div>
               <p className={`eyebrow${i === 1 ? ' light' : ''}`}><span /> {offer.eyebrow}</p>

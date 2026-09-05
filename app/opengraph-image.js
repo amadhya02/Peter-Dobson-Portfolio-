@@ -1,10 +1,11 @@
 import { ImageResponse } from 'next/og';
 import shared from '../content/cms/shared.json';
-import seo from '../content/cms/seo.json';
 
-export const alt = `${shared.brand.name}, ${shared.brand.tagline}`;
+export const alt = `${shared.brand.name} — ${shared.brand.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
+
+const bars = [42, 69, 93, 69, 42];
 
 export default function Image() {
   return new ImageResponse(
@@ -14,17 +15,24 @@ export default function Image() {
           width: '100%',
           height: '100%',
           display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#0f1012',
+          background: '#eef0ec',
+          fontFamily: 'sans-serif',
         }}
       >
-        <img
-          src={`${seo.siteUrl}/assets/truenorth-logo.png`}
-          width={560}
-          height={560}
-          style={{ borderRadius: '50%' }}
-        />
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 36 }}>
+          {bars.map((h, i) => (
+            <div key={i} style={{ display: 'flex', width: i === 2 ? 15 : 9, height: h, background: '#15171a' }} />
+          ))}
+        </div>
+        <div style={{ display: 'flex', fontSize: 72, fontWeight: 800, color: '#15171a', letterSpacing: '-0.02em' }}>
+          {shared.brand.name}
+        </div>
+        <div style={{ display: 'flex', fontSize: 26, fontWeight: 600, color: '#5b5e5a', marginTop: 16, textTransform: 'uppercase', letterSpacing: '0.2em' }}>
+          {shared.brand.tagline}
+        </div>
       </div>
     ),
     { ...size }

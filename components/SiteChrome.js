@@ -41,5 +41,5 @@ export function SiteFooter() {
 }
 
 export function PageShell({ children, eyebrow, title, outline, intro }) {
-  return <><ScrollReveal /><SiteHeader /><main><section className="page-hero"><p className="eyebrow"><span />{eyebrow}</p><h1>{title}<br /><em>{outline}</em></h1>{intro && <p>{intro}</p>}</section>{children}</main><SiteFooter /></>;
+  return <><ScrollReveal /><SiteHeader /><main><section className="page-hero reveal"><p className="eyebrow"><span />{eyebrow}</p><h1>{title}<br /><em>{outline}</em></h1>{intro && <p>{intro}</p>}</section>{children}</main><SiteFooter /></>;
 }

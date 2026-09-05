@@ -43,14 +43,14 @@ export default function Home() {
 
       <main id="top">
         <section className="hero">
-          <div className="hero-copy">
+          <div className="hero-copy reveal-left">
             <p className="eyebrow"><span /> {home.hero.eyebrow}</p>
             <h1>{home.hero.headingLine1}<br />{home.hero.headingLine2} <em>{home.hero.headingEm}</em></h1>
             <p className="hero-intro">{home.hero.intro}</p>
             <div className="hero-actions"><a className="button" href={intakeUrl}>{home.hero.primaryCta} <span>↗</span></a><a className="text-link" href="#coaching">{home.hero.secondaryCta} <span>↓</span></a></div>
             <div className="hero-proof">{home.hero.proof.map((item) => <div key={item.value}><strong>{item.value}</strong><span>{item.labelLine1}<br />{item.labelLine2}</span></div>)}</div>
           </div>
-          <div className="hero-visual">
+          <div className="hero-visual reveal-right">
             <div className="image-frame"><img src={media.heroPhoto} alt={media.heroPhotoAlt} /></div>
             <div className="status-pill"><span /> {home.hero.statusPill}</div><div className="hero-stamp"><span>{home.hero.stampLine}</span><b>{home.hero.stampMonogram}</b></div>
           </div>
@@ -64,7 +64,7 @@ export default function Home() {
             {home.coaching.cards.map((card, i) => {
               const hrefs = [intakeUrl, 'https://truenorthgym.nl/en', intakeUrl];
               const icons = ['↗', '✳', '＋'];
-              const classNames = ['service-card featured reveal', 'service-card reveal', 'service-card dark-card reveal'];
+              const classNames = ['service-card featured reveal-scale', 'service-card reveal-scale', 'service-card dark-card reveal-scale'];
               return (
                 <article className={classNames[i]} key={card.title}>
                   <div className="card-number">0{i + 1}</div>
@@ -88,7 +88,7 @@ export default function Home() {
 
         <section className="section process">
           <div className="section-heading compact"><p className="eyebrow"><span /> {home.process.eyebrow}</p><h2>{home.process.headingLine1} <em>{home.process.headingEm}</em></h2></div>
-          <div className="steps">{home.process.steps.map((step) => <article className="reveal" key={step.number}><b>{step.number}</b><span /><h3>{step.title}</h3><p>{step.text}</p></article>)}</div>
+          <div className="steps">{home.process.steps.map((step) => <article className="reveal-scale" key={step.number}><b>{step.number}</b><span /><h3>{step.title}</h3><p>{step.text}</p></article>)}</div>
         </section>
 
         <section className="section gym" id="gym"><div className="gym-card reveal"><div className="gym-logo-wrap"><img src={media.gymLogo} alt={media.gymLogoAlt} /></div><div><p className="eyebrow light"><span /> {home.gym.eyebrow}</p><h2>{home.gym.headingLine1}<br /><em>{home.gym.headingEm}</em></h2><p>{home.gym.text}</p><div className="gym-actions"><a className="button button-light" href="https://truenorthgym.nl/en">{home.gym.primaryCta} <span>↗</span></a><a className="text-link light-link" href="https://peterdobsonfitness.virtuagym.com/webshop/product?id=b62540dd56761c58445701c5df843d0192b6&amp;club=OVhlSHR2aDZZREJGZ1gyZlRZdjdvZz09">{home.gym.secondaryCta}</a></div></div></div></section>
