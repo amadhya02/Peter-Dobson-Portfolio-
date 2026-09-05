@@ -1,15 +1,15 @@
 backend:
   name: github
-  repo: TODO-set-after-pushing-to-github/peter-dobson-portfolio
+  repo: amadhya02/Peter-Dobson-Portfolio-
   branch: main
   auth_endpoint: api/auth
 
 # Production login (on Vercel) talks to the OAuth proxy at app/api/auth and
-# app/api/callback. Before it'll work you need to:
-#   1. Push this repo to GitHub and fix the `repo:` line above to match.
-#   2. Create a GitHub OAuth App (github.com/settings/developers -> New OAuth App)
+# app/api/callback. Repo is pushed (github.com/amadhya02/Peter-Dobson-Portfolio-)
+# — still needed before login works on the live site:
+#   1. Create a GitHub OAuth App (github.com/settings/developers -> New OAuth App)
 #      with "Authorization callback URL" set to https://<your-vercel-domain>/api/callback
-#   3. Add GITHUB_OAUTH_CLIENT_ID and GITHUB_OAUTH_CLIENT_SECRET as environment
+#   2. Add GITHUB_OAUTH_CLIENT_ID and GITHUB_OAUTH_CLIENT_SECRET as environment
 #      variables in the Vercel project settings (Production + Preview).
 #
 # Locally, `npm run cms` (decap-server) proxies straight to the filesystem
