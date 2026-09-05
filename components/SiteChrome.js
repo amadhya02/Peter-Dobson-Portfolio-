@@ -3,14 +3,15 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import shared from '../content/cms/shared.json';
+import ScrollReveal from './ScrollReveal';
 
 export const intakeUrl = '/intake';
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-    setTheme(document.documentElement.dataset.theme || 'dark');
+    setTheme(document.documentElement.dataset.theme || 'light');
   }, []);
 
   const toggleTheme = () => {
@@ -40,5 +41,5 @@ export function SiteFooter() {
 }
 
 export function PageShell({ children, eyebrow, title, outline, intro }) {
-  return <><SiteHeader /><main><section className="page-hero"><p className="eyebrow"><span />{eyebrow}</p><h1>{title}<br /><em>{outline}</em></h1>{intro && <p>{intro}</p>}</section>{children}</main><SiteFooter /></>;
+  return <><ScrollReveal /><SiteHeader /><main><section className="page-hero"><p className="eyebrow"><span />{eyebrow}</p><h1>{title}<br /><em>{outline}</em></h1>{intro && <p>{intro}</p>}</section>{children}</main><SiteFooter /></>;
 }

@@ -2,6 +2,7 @@
 
 import { Fragment, useEffect, useState } from 'react';
 import { ThemeToggle } from '../components/SiteChrome';
+import ScrollReveal from '../components/ScrollReveal';
 import shared from '../content/cms/shared.json';
 import media from '../content/cms/media.json';
 import home from '../content/cms/home.json';
@@ -26,21 +27,11 @@ export default function Home() {
     return () => document.body.classList.remove('menu-open');
   }, [menuOpen]);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('revealed');
-      });
-    }, { threshold: 0.12 });
-    const elements = document.querySelectorAll('.reveal');
-    elements.forEach((element) => observer.observe(element));
-    return () => observer.disconnect();
-  }, []);
-
   const closeMenu = () => setMenuOpen(false);
 
   return (
     <>
+      <ScrollReveal />
       <header className="site-header">
         <Brand />
         <button className="menu-button" type="button" aria-label="Toggle navigation" aria-expanded={menuOpen} aria-controls="main-nav" onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>

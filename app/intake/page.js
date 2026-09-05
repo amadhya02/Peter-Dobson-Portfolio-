@@ -8,7 +8,7 @@ export const metadata = { title: seo.intake.title, description: seo.intake.descr
 export default function IntakePage() {
   return <PageShell eyebrow={intake.hero.eyebrow} title={intake.hero.title} outline={intake.hero.outline} intro={intake.hero.intro}>
     <section className="intake-layout subpage-section">
-      <div className="intake-aside">
+      <div className="intake-aside reveal">
         <p className="eyebrow"><span /> {intake.steps.eyebrow}</p>
         <ol>{intake.steps.items.map((step) => <li key={step.number}><b>{step.number}</b><div><h3>{step.title}</h3><p>{step.text}</p></div></li>)}</ol>
         <a href={`mailto:${shared.footer.email}`}>{intake.steps.emailPrompt}</a>

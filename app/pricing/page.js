@@ -7,7 +7,7 @@ export const metadata = { title: seo.pricing.title, description: seo.pricing.des
 
 export default function PricingPage() {
   return <PageShell eyebrow={pricing.hero.eyebrow} title={pricing.hero.title} outline={pricing.hero.outline} intro={pricing.hero.intro}>
-    <section className="price-grid subpage-section">{pricing.plans.map((plan, i) => <article className={`price-card${plan.featured ? ' price-featured' : ''}`} key={plan.title}><span className="plan-number">0{i + 1}</span><p className="card-label">{plan.tag}</p><h2>{plan.title}</h2><div className="price"><strong>{plan.price}</strong><span>{plan.suffix}</span></div><p>{plan.text}</p><Link href="/intake">{pricing.planCta} <span>→</span></Link></article>)}</section>
+    <section className="price-grid subpage-section">{pricing.plans.map((plan, i) => <article className={`price-card reveal${plan.featured ? ' price-featured' : ''}`} key={plan.title}><span className="plan-number">0{i + 1}</span><p className="card-label">{plan.tag}</p><h2>{plan.title}</h2><div className="price"><strong>{plan.price}</strong><span>{plan.suffix}</span></div><p>{plan.text}</p><Link href="/intake">{pricing.planCta} <span>→</span></Link></article>)}</section>
     <section className="pricing-note"><p>{pricing.note}</p><Link className="button" href="/intake">{pricing.noteCta} <span>↗</span></Link></section>
   </PageShell>;
 }
