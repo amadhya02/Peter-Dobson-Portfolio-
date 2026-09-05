@@ -2,6 +2,9 @@ backend:
   name: github
   repo: amadhya02/Peter-Dobson-Portfolio-
   branch: main
+  # Without base_url, Decap defaults to Netlify's own hosted OAuth proxy
+  # (api.netlify.com) instead of this site's own /api/auth route.
+  base_url: https://peter-portfolio-blush.vercel.app
   auth_endpoint: api/auth
 
 # Production login (on Vercel) talks to the OAuth proxy at app/api/auth and
