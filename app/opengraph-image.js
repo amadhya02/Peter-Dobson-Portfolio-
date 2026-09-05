@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 import shared from '../content/cms/shared.json';
 import seo from '../content/cms/seo.json';
 
-export const alt = `${shared.brand.name} — ${shared.brand.tagline}`;
+export const alt = `${shared.brand.name}, ${shared.brand.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 

@@ -1,6 +1,6 @@
 {
   "siteUrl": "https://peter-portfolio-blush.vercel.app",
-  "home": { "title": "Peter Dobson — Personal Training Amsterdam", "description": "Personal training in Amsterdam with Peter Dobson. Personalised coaching, strength training and small group classes at TrueNorth Gym." },
+  "home": { "title": "Peter Dobson, Personal Training Amsterdam", "description": "Personal training in Amsterdam with Peter Dobson. Personalised coaching, strength training and small group classes at TrueNorth Gym." },
   "about": { "title": "About Peter | Peter Dobson Fitness", "description": "Meet Amsterdam personal trainer Peter Dobson." },
   "coaching": { "title": "Personal Coaching | Peter Dobson Fitness", "description": "One-to-one and small group strength coaching in Amsterdam." },
   "gym": { "title": "TrueNorth Gym | Peter Dobson Fitness", "description": "Train with Peter at TrueNorth Gym in Amsterdam." },
