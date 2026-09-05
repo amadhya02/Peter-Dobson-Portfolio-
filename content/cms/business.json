@@ -1,0 +1,10 @@
+{
+  "description": "One-to-one and small group personal training in Amsterdam, coached by Peter Dobson at TrueNorth Gym.",
+  "priceRange": "€€",
+  "address": {
+    "streetAddress": "Potgieterstraat 61-1",
+    "postalCode": "1053 XT",
+    "addressLocality": "Amsterdam",
+    "addressCountry": "NL"
+  }
+}

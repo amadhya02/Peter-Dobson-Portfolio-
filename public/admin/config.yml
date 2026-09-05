@@ -61,6 +61,24 @@ collections:
               - { label: "Contact email", name: email, widget: string }
               - { label: "Copyright suffix (after the © year)", name: copyrightSuffix, widget: string }
 
+  - name: business
+    label: Business info (for Google/search listings)
+    files:
+      - name: business
+        label: Business info
+        file: content/cms/business.json
+        fields:
+          - { label: "Short business description (used by search engines, not shown on the site itself)", name: description, widget: text }
+          - { label: "Price range (e.g. € / €€ / €€€)", name: priceRange, widget: string }
+          - label: Registered address
+            name: address
+            widget: object
+            fields:
+              - { label: "Street + number", name: streetAddress, widget: string }
+              - { label: "Postal code", name: postalCode, widget: string }
+              - { label: City, name: addressLocality, widget: string }
+              - { label: "Country code (e.g. NL)", name: addressCountry, widget: string }
+
   - name: seo
     label: SEO (page titles & descriptions)
     files:
