@@ -93,7 +93,7 @@ export default function Home() {
         <section className="section final-cta"><p className="eyebrow"><span /> {home.finalCta.eyebrow}</p><h2>{home.finalCta.headingLine1}<br />{home.finalCta.headingLine2} <em>{home.finalCta.headingEm}</em></h2><p>{home.finalCta.text}</p><a className="button" href={intakeUrl}>{home.finalCta.cta} <span>↗</span></a></section>
       </main>
 
-      <footer><Brand footer /><div className="footer-links"><a href="#coaching">{shared.footer.coaching}</a><a href="#about">{shared.footer.about}</a><a href="#gym">{shared.footer.gymHome}</a><a href="/privacy">{shared.footer.privacy}</a></div><div className="footer-contact"><a href={`mailto:${shared.footer.email}`}>{shared.footer.email}</a><a href={shared.footer.instagramUrl}>{shared.footer.instagramLabel}</a></div><p className="copyright">© {new Date().getFullYear()} {shared.footer.copyrightSuffix}</p></footer>
+      <footer><div className="footer-inner"><Brand footer /><div className="footer-links"><a href="#coaching">{shared.footer.coaching}</a><a href="#about">{shared.footer.about}</a><a href="#gym">{shared.footer.gymHome}</a><a href="/privacy">{shared.footer.privacy}</a></div><div className="footer-contact"><a href={`mailto:${shared.footer.email}`}>{shared.footer.email}</a><a href={shared.footer.instagramUrl}>{shared.footer.instagramLabel}</a></div><p className="copyright">© {new Date().getFullYear()} {shared.footer.copyrightSuffix}</p></div></footer>
     </>
   );
 }

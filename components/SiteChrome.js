@@ -37,7 +37,7 @@ export function SiteHeader() {
 }
 
 export function SiteFooter() {
-  return <footer><Brand footer /><div className="footer-links"><Link href="/coaching">{shared.footer.coaching}</Link><Link href="/about">{shared.footer.about}</Link><Link href="/gym">{shared.footer.gymSubpage}</Link><Link href="/privacy">{shared.footer.privacy}</Link><Link href="/terms">{shared.footer.terms}</Link></div><div className="footer-contact"><a href={`mailto:${shared.footer.email}`}>{shared.footer.email}</a><a href={shared.footer.instagramUrl}>{shared.footer.instagramLabel}</a></div><p className="copyright">© {new Date().getFullYear()} {shared.footer.copyrightSuffix}</p></footer>;
+  return <footer><div className="footer-inner"><Brand footer /><div className="footer-links"><Link href="/coaching">{shared.footer.coaching}</Link><Link href="/about">{shared.footer.about}</Link><Link href="/gym">{shared.footer.gymSubpage}</Link><Link href="/privacy">{shared.footer.privacy}</Link><Link href="/terms">{shared.footer.terms}</Link></div><div className="footer-contact"><a href={`mailto:${shared.footer.email}`}>{shared.footer.email}</a><a href={shared.footer.instagramUrl}>{shared.footer.instagramLabel}</a></div><p className="copyright">© {new Date().getFullYear()} {shared.footer.copyrightSuffix}</p></div></footer>;
 }
 
 export function PageShell({ children, eyebrow, title, outline, intro }) {
