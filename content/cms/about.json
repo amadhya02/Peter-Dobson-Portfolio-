@@ -22,5 +22,14 @@
     { "number": "02", "title": "Practical", "text": "Training that works in the gym and supports life outside it." },
     { "number": "03", "title": "Progressive", "text": "Clear challenges, measured progress and constant learning." },
     { "number": "04", "title": "Positive", "text": "A serious approach to results in a welcoming environment." }
-  ]
+  ],
+  "approach": {
+    "eyebrow": "How Peter coaches",
+    "heading": "CLEAR COACHING. REAL MOMENTUM.",
+    "items": [
+      { "title": "Listen first", "text": "Your goals, experience and real-life schedule set the direction." },
+      { "title": "Teach the why", "text": "Understand the movements and decisions behind your programme." },
+      { "title": "Adapt as you grow", "text": "Review what is working and keep the challenge appropriate." }
+    ]
+  }
 }

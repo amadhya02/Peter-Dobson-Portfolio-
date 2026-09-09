@@ -12,7 +12,7 @@ const offerLinks = [
 ];
 
 export default function CoachingPage() {
-  return <PageShell eyebrow={coaching.hero.eyebrow} title={coaching.hero.title} outline={coaching.hero.outline} intro={coaching.hero.intro}>
+  return <PageShell eyebrow={coaching.hero.eyebrow} title={coaching.hero.title} outline={coaching.hero.outline} intro={coaching.hero.intro} variant="coaching" cue="3 ways to train">
     <section className="subpage-section offer-stack">
       {coaching.offers.map((offer, i) => {
         const link = offerLinks[i];
@@ -26,6 +26,7 @@ export default function CoachingPage() {
               <p className={`eyebrow${i === 1 ? ' light' : ''}`}><span /> {offer.eyebrow}</p>
               <h2>{offer.headingLine1}<br />{offer.headingLine2}</h2>
               <p>{offer.text}</p>
+              <div className="offer-fit"><span>{offer.bestFor}</span><span>{offer.format}</span></div>
               <ul>{offer.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
               {cta}
             </div>

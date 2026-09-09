@@ -12,6 +12,7 @@
       "price": "€60",
       "suffix": "from / session",
       "text": "Weekly personal training for three months, ideal for building momentum, confidence and a consistent routine.",
+      "includes": ["Weekly personal training", "Personalised programme", "Progress reviews"],
       "featured": true
     },
     {
@@ -20,6 +21,7 @@
       "price": "€54",
       "suffix": "from / session",
       "text": "Ongoing coaching at the best session rate, for people ready to make strength training a lasting habit.",
+      "includes": ["Ongoing personal training", "Personalised programme", "Programme updates"],
       "featured": false
     },
     {
@@ -28,6 +30,7 @@
       "price": "€150",
       "suffix": "/ month",
       "text": "A three-month contract including two sessions, an individual schedule and consistent feedback.",
+      "includes": ["Two coached sessions", "Individual schedule", "Consistent feedback"],
       "featured": false
     },
     {
@@ -36,10 +39,21 @@
       "price": "€70",
       "suffix": "/ session",
       "text": "A focused one-off session for a specific lift or goal, with no ongoing contract.",
+      "includes": ["One focused session", "Technique analysis", "Actionable feedback"],
       "featured": false
     }
   ],
   "planCta": "Choose this plan",
   "note": "All prices are shown in euros. Final programme structure and session frequency are agreed during intake.",
-  "noteCta": "Book your free intake"
+  "noteCta": "Book your free intake",
+  "faq": {
+    "eyebrow": "Before you decide",
+    "heading": "PRICING, MADE CLEAR.",
+    "items": [
+      { "question": "Which option should I choose?", "answer": "You do not need to decide alone. The free intake is used to understand your goals and discuss the most suitable option." },
+      { "question": "Are the prices final?", "answer": "Prices are shown in euros. Session frequency and the final programme structure are confirmed together during intake." },
+      { "question": "Can I book just one session?", "answer": "Yes. The single session is designed for one specific lift, movement or training question, without an ongoing contract." },
+      { "question": "What is the cancellation policy?", "answer": "Appointments should be cancelled or moved at least 24 hours in advance. Full details are available in the terms." }
+    ]
+  }
 }

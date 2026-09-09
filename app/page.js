@@ -1,48 +1,24 @@
 'use client';
 
-import { Fragment, useEffect, useState } from 'react';
-import { ThemeToggle } from '../components/SiteChrome';
+import { Fragment } from 'react';
+import { SiteFooter, SiteHeader } from '../components/SiteChrome';
 import ScrollReveal from '../components/ScrollReveal';
-import shared from '../content/cms/shared.json';
 import media from '../content/cms/media.json';
 import home from '../content/cms/home.json';
 
 const intakeUrl = '/intake';
-const pricingUrl = '/pricing';
-
-function Brand({ footer = false }) {
-  return (
-    <a className={`brand brand-logo${footer ? ' footer-brand' : ''}`} href="#top" aria-label="Peter Dobson Fitness home"><span className="logo-symbol" aria-hidden="true"><svg viewBox="0 0 96 40"><rect className="logo-bar" x="5" y="18.5" width="86" height="3" rx="1.5"/><g className="logo-plates"><rect x="2" y="14" width="5" height="12" rx="1"/><rect x="8" y="9" width="6" height="22" rx="1"/><rect x="15" y="4" width="7" height="32" rx="1"/><rect className="logo-collar" x="24" y="12" width="5" height="16" rx="1"/><rect x="89" y="14" width="5" height="12" rx="1"/><rect x="82" y="9" width="6" height="22" rx="1"/><rect x="74" y="4" width="7" height="32" rx="1"/><rect className="logo-collar" x="67" y="12" width="5" height="16" rx="1"/></g><path className="logo-knurl" d="M34 17v6m4-6v6m20-6v6m4-6v6"/><rect className="logo-accent" x="46" y="16" width="4" height="8" rx="2"/></svg></span><span className="logo-copy"><strong>{shared.brand.name}</strong><small>{shared.brand.tagline}</small></span></a>
-  );
-}
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    document.body.classList.toggle('menu-open', menuOpen);
-    return () => document.body.classList.remove('menu-open');
-  }, [menuOpen]);
-
-  const closeMenu = () => setMenuOpen(false);
-
   return (
     <>
       <ScrollReveal />
-      <header className="site-header">
-        <Brand />
-        <button className="menu-button" type="button" aria-label="Toggle navigation" aria-expanded={menuOpen} aria-controls="main-nav" onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>
-        <nav id="main-nav" className={menuOpen ? 'open' : ''} aria-label="Primary navigation">
-          <a href="/coaching" onClick={closeMenu}>{shared.nav.coaching}</a><a href="/about" onClick={closeMenu}>{shared.nav.about}</a><a href="/gym" onClick={closeMenu}>{shared.nav.gym}</a><a href={pricingUrl}>{shared.nav.pricing}</a><a className="nav-intake" href="/intake" onClick={closeMenu}>{shared.nav.bookIntakeMobile}</a>
-        </nav>
-        <ThemeToggle /><a className="button button-small header-cta" href={intakeUrl}>{shared.nav.headerCta} <span>↗</span></a>
-      </header>
+      <SiteHeader />
 
       <main id="top">
         <section className="hero">
-          <div className="hero-copy reveal-left">
+          <div className="hero-copy hero-ready">
             <p className="eyebrow"><span /> {home.hero.eyebrow}</p>
-            <h1>{home.hero.headingLine1}<br />{home.hero.headingLine2} <em>{home.hero.headingEm}</em></h1>
+            <h1 className="hero-title"><span className="hero-title-line"><span>{home.hero.headingLine1}</span></span><span className="hero-title-line"><span>{home.hero.headingLine2} <em>{home.hero.headingEm}</em></span></span></h1>
             <p className="hero-intro">{home.hero.intro}</p>
             <div className="hero-actions"><a className="button" href={intakeUrl}>{home.hero.primaryCta} <span>↗</span></a><a className="text-link" href="#coaching">{home.hero.secondaryCta} <span>↓</span></a></div>
             <div className="hero-proof">{home.hero.proof.map((item) => <div key={item.value}><strong>{item.value}</strong><span>{item.labelLine1}<br />{item.labelLine2}</span></div>)}</div>
@@ -85,7 +61,7 @@ export default function Home() {
 
         <section className="section process">
           <div className="section-heading compact"><p className="eyebrow"><span /> {home.process.eyebrow}</p><h2>{home.process.headingLine1} <em>{home.process.headingEm}</em></h2></div>
-          <div className="steps">{home.process.steps.map((step) => <article className="reveal-scale" key={step.number}><b>{step.number}</b><span /><h3>{step.title}</h3><p>{step.text}</p></article>)}</div>
+          <div className="steps reveal-process">{home.process.steps.map((step) => <article className="reveal-scale" key={step.number}><b>{step.number}</b><span /><h3>{step.title}</h3><p>{step.text}</p></article>)}</div>
         </section>
 
         <section className="section gym" id="gym"><div className="gym-card reveal"><div className="gym-logo-wrap"><img src={media.gymLogo} alt={media.gymLogoAlt} /></div><div><p className="eyebrow light"><span /> {home.gym.eyebrow}</p><h2>{home.gym.headingLine1}<br /><em>{home.gym.headingEm}</em></h2><p>{home.gym.text}</p><div className="gym-actions"><a className="button button-light" href="https://truenorthgym.nl/en">{home.gym.primaryCta} <span>↗</span></a><a className="text-link light-link" href="https://peterdobsonfitness.virtuagym.com/webshop/product?id=b62540dd56761c58445701c5df843d0192b6&amp;club=OVhlSHR2aDZZREJGZ1gyZlRZdjdvZz09">{home.gym.secondaryCta}</a></div></div></div></section>
@@ -93,7 +69,7 @@ export default function Home() {
         <section className="section final-cta"><p className="eyebrow"><span /> {home.finalCta.eyebrow}</p><h2>{home.finalCta.headingLine1}<br />{home.finalCta.headingLine2} <em>{home.finalCta.headingEm}</em></h2><p>{home.finalCta.text}</p><a className="button" href={intakeUrl}>{home.finalCta.cta} <span>↗</span></a></section>
       </main>
 
-      <footer><div className="footer-inner"><Brand footer /><div className="footer-links"><a href="#coaching">{shared.footer.coaching}</a><a href="#about">{shared.footer.about}</a><a href="#gym">{shared.footer.gymHome}</a><a href="/privacy">{shared.footer.privacy}</a></div><div className="footer-contact"><a href={`mailto:${shared.footer.email}`}>{shared.footer.email}</a><a href={shared.footer.instagramUrl}>{shared.footer.instagramLabel}</a></div><p className="copyright">© {new Date().getFullYear()} {shared.footer.copyrightSuffix}</p></div></footer>
+      <SiteFooter />
     </>
   );
 }

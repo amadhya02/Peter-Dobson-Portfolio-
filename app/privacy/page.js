@@ -14,10 +14,11 @@ function renderParagraph(text, email) {
 const { privacy } = legal;
 
 export default function PrivacyPage() {
-  return <PageShell eyebrow={privacy.hero.eyebrow} title={privacy.hero.title} outline={privacy.hero.outline} intro={privacy.hero.intro}>
+  return <PageShell eyebrow={privacy.hero.eyebrow} title={privacy.hero.title} outline={privacy.hero.outline} intro={privacy.hero.intro} variant="legal" cue="Privacy information">
     <article className="legal-document subpage-section">
+      <nav className="legal-toc" aria-label="On this page"><b>On this page</b>{privacy.sections.map((section, i) => <a href={`#privacy-${i + 1}`} key={section.title}>{section.title}</a>)}</nav>
       <p className="legal-intro">{privacy.intro}</p>
-      {privacy.sections.map((section) => <section key={section.title}><h2>{section.title}</h2>{section.paragraphs.map((paragraph, i) => <p key={i}>{renderParagraph(paragraph, shared.footer.email)}</p>)}</section>)}
+      {privacy.sections.map((section, sectionIndex) => <section id={`privacy-${sectionIndex + 1}`} key={section.title}><h2>{section.title}</h2><div>{section.paragraphs.map((paragraph, i) => <p key={i}>{renderParagraph(paragraph, shared.footer.email)}</p>)}</div></section>)}
     </article>
   </PageShell>;
 }

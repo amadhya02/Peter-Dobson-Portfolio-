@@ -11,7 +11,7 @@ export async function POST(request) {
     return NextResponse.json({ success: false, message: 'Invalid request.' }, { status: 400 });
   }
 
-  const { name, email, phone, goals, availability, company } = body || {};
+  const { name, email, phone, goals, availability, contactMethod, company } = body || {};
 
   // Honeypot: a hidden field real visitors never fill in. Pretend success
   // so the bot doesn't learn anything, but never send the mail.
@@ -19,8 +19,8 @@ export async function POST(request) {
     return NextResponse.json({ success: true });
   }
 
-  if (!name || !email || !goals) {
-    return NextResponse.json({ success: false, message: 'Please fill in your name, email and goals.' }, { status: 400 });
+  if (!name || !email || !goals || !contactMethod) {
+    return NextResponse.json({ success: false, message: 'Please complete all required fields.' }, { status: 400 });
   }
 
   const gmailUser = process.env.GMAIL_USER;
@@ -45,6 +45,7 @@ export async function POST(request) {
         `Email: ${email}`,
         `Phone: ${phone || '(not provided)'}`,
         `Preferred training times: ${availability || '(not provided)'}`,
+        `Preferred contact method: ${contactMethod}`,
         '',
         'Goals:',
         goals,

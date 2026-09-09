@@ -25,13 +25,17 @@
     "goalLabel": "What would you like help with?",
     "goalPlaceholder": "Tell Peter about your goals, training experience, or anything else that matters.",
     "availabilityLabel": "When do you prefer to train?",
-    "availabilityPlaceholder": "Mornings, evenings, specific days…",
+    "availabilityPlaceholder": "Select a general preference",
+    "availabilityOptions": ["No preference", "Weekday mornings", "Weekday afternoons", "Weekday evenings", "Weekends"],
+    "contactLabel": "How should Peter contact you?",
+    "contactOptions": ["Email", "Phone", "WhatsApp"],
+    "progressLabel": "Required fields completed",
     "consentTextBefore": "I agree that Peter may use these details to contact me about my intake. See the",
     "consentLinkText": "privacy policy",
     "submitCta": "Send intake request",
     "submittingLabel": "Sending…",
-    "formNote": "Your details are sent directly to Peter by email. No details are stored on this website.",
-    "successMessage": "Thanks — your intake request is on its way. Peter will reply personally soon.",
+    "formNote": "Your details are sent directly to Peter by email. No details are stored on this website. Peter will reply personally as soon as possible.",
+    "successMessage": "Thanks — your intake request is on its way. Peter will review your goals and reply personally to arrange the conversation.",
     "errorFallback": "Something went wrong sending your request. Please try again or email directly."
   }
 }

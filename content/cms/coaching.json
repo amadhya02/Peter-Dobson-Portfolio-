@@ -12,6 +12,8 @@
       "headingLine1": "ONE-TO-ONE",
       "headingLine2": "TRAINING",
       "text": "Every session is yours. We work on the movements, habits and skills that matter for your goals, with close attention to technique and sustainable progress.",
+      "bestFor": "Best for · Personal goals and close support",
+      "format": "Format · Individual coached sessions",
       "bullets": ["Individual assessment and goal setting", "Personalised strength programme", "Hands-on technique coaching", "Progress reviews and programme updates"],
       "cta": "Start with an intake"
     },
@@ -21,6 +23,8 @@
       "headingLine1": "SMALL GROUP",
       "headingLine2": "TRAINING",
       "text": "Get expert coaching, structure and the motivation of training alongside others, all within a focused, friendly environment.",
+      "bestFor": "Best for · Structure, energy and community",
+      "format": "Format · Small coached groups",
       "bullets": ["Small coached groups", "Scalable strength sessions", "Welcoming community", "TrueNorth Gym equipment"],
       "cta": "View the schedule"
     },
@@ -30,6 +34,8 @@
       "headingLine1": "SINGLE",
       "headingLine2": "SESSION",
       "text": "Want help with one specific lift or movement? Book a focused session without an ongoing contract and leave with a clear way forward.",
+      "bestFor": "Best for · A specific lift or skill",
+      "format": "Format · One focused 60-minute session",
       "bullets": ["One 60-minute session", "Technique analysis", "Actionable feedback", "No contract required"],
       "cta": "See pricing"
     }

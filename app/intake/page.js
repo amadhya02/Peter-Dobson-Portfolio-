@@ -7,7 +7,7 @@ import intake from '../../content/cms/intake.json';
 export const metadata = { title: seo.intake.title, description: seo.intake.description };
 
 export default function IntakePage() {
-  return <PageShell eyebrow={intake.hero.eyebrow} title={intake.hero.title} outline={intake.hero.outline} intro={intake.hero.intro}>
+  return <PageShell eyebrow={intake.hero.eyebrow} title={intake.hero.title} outline={intake.hero.outline} intro={intake.hero.intro} variant="intake" cue="Free initial conversation">
     <section className="intake-layout subpage-section">
       <div className="intake-aside reveal-left">
         <p className="eyebrow"><span /> {intake.steps.eyebrow}</p>

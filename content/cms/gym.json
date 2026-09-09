@@ -20,6 +20,7 @@
     "headingEm": "AMSTERDAM.",
     "visitTitle": "Your first visit",
     "visitText": "Book a welcome session to meet Peter, look around the gym and talk about your goals, without pressure or obligation.",
-    "cta": "Plan your visit"
+    "cta": "Plan your visit",
+    "notes": ["See the space before deciding", "Discuss coaching and gym access", "Ask questions without pressure"]
   }
 }

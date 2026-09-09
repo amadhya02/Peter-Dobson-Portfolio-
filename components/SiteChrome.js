@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import shared from '../content/cms/shared.json';
 import ScrollReveal from './ScrollReveal';
@@ -31,15 +32,33 @@ export function Brand({ footer = false }) {
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [logoIntro, setLogoIntro] = useState(false);
+  const pathname = usePathname();
   useEffect(() => { document.body.classList.toggle('menu-open', open); return () => document.body.classList.remove('menu-open'); }, [open]);
+  useEffect(() => {
+    if (!sessionStorage.getItem('pdf-logo-seen')) {
+      sessionStorage.setItem('pdf-logo-seen', '1');
+      setLogoIntro(true);
+    }
+  }, []);
   const close = () => setOpen(false);
-  return <header className="site-header"><Brand /><button className="menu-button" type="button" aria-label="Toggle navigation" aria-expanded={open} aria-controls="main-nav" onClick={() => setOpen(!open)}><span /><span /></button><nav id="main-nav" className={open ? 'open' : ''} aria-label="Primary navigation"><Link href="/coaching" onClick={close}>{shared.nav.coaching}</Link><Link href="/about" onClick={close}>{shared.nav.about}</Link><Link href="/gym" onClick={close}>{shared.nav.gym}</Link><Link href="/pricing" onClick={close}>{shared.nav.pricing}</Link><Link className="nav-intake" href="/intake" onClick={close}>{shared.nav.bookIntakeMobile}</Link></nav><ThemeToggle /><Link className="button button-small header-cta" href="/intake">{shared.nav.headerCta} <span>↗</span></Link></header>;
+  const navLink = (href, label, className = '') => <Link className={`${className}${pathname === href ? ' active' : ''}`.trim()} href={href} onClick={close} aria-current={pathname === href ? 'page' : undefined}>{label}</Link>;
+  return <header className={`site-header${logoIntro ? ' logo-intro' : ''}`}><Brand /><button className="menu-button" type="button" aria-label="Toggle navigation" aria-expanded={open} aria-controls="main-nav" onClick={() => setOpen(!open)}><span /><span /></button><nav id="main-nav" className={open ? 'open' : ''} aria-label="Primary navigation">{navLink('/coaching', shared.nav.coaching)}{navLink('/about', shared.nav.about)}{navLink('/gym', shared.nav.gym)}{navLink('/pricing', shared.nav.pricing)}{navLink('/intake', shared.nav.bookIntakeMobile, 'nav-intake')}<div className="mobile-nav-meta"><a href={`mailto:${shared.footer.email}`}>{shared.footer.email}</a><a href={shared.footer.instagramUrl}>{shared.footer.instagramLabel}</a></div></nav><ThemeToggle /><Link className={`button button-small header-cta${pathname === '/intake' ? ' active' : ''}`} href="/intake" aria-current={pathname === '/intake' ? 'page' : undefined}>{shared.nav.headerCta} <span>↗</span></Link></header>;
 }
 
 export function SiteFooter() {
   return <footer><div className="footer-inner"><Brand footer /><div className="footer-links"><Link href="/coaching">{shared.footer.coaching}</Link><Link href="/about">{shared.footer.about}</Link><Link href="/gym">{shared.footer.gymSubpage}</Link><Link href="/privacy">{shared.footer.privacy}</Link><Link href="/terms">{shared.footer.terms}</Link></div><div className="footer-contact"><a href={`mailto:${shared.footer.email}`}>{shared.footer.email}</a><a href={shared.footer.instagramUrl}>{shared.footer.instagramLabel}</a></div><p className="copyright">© {new Date().getFullYear()} {shared.footer.copyrightSuffix}</p></div></footer>;
 }
 
-export function PageShell({ children, eyebrow, title, outline, intro }) {
-  return <><ScrollReveal /><SiteHeader /><main><section className="page-hero reveal"><p className="eyebrow"><span />{eyebrow}</p><h1>{title}<br /><em>{outline}</em></h1>{intro && <p>{intro}</p>}</section>{children}</main><SiteFooter /></>;
+function HeroFigure({ variant }) {
+  if (variant === 'about') return <svg className="page-hero-figure" viewBox="0 0 180 180" aria-hidden="true"><circle cx="90" cy="56" r="27"/><path d="M42 145c5-36 22-54 48-54s43 18 48 54M25 145h130"/><path className="figure-accent" d="M34 52h22M45 41v22M128 41l16 16M144 41l-16 16"/></svg>;
+  if (variant === 'coaching') return <svg className="page-hero-figure" viewBox="0 0 180 180" aria-hidden="true"><rect x="39" y="30" width="102" height="126" rx="5"/><path d="M68 30v-9h44v18H68zM59 69l8 8 15-18M93 68h28M59 105l8 8 15-18M93 104h28M59 137h62"/><path className="figure-accent" d="M133 127l20 20M153 127l-20 20"/></svg>;
+  if (variant === 'gym') return <svg className="page-hero-figure" viewBox="0 0 180 180" aria-hidden="true"><path d="M35 156V22h15v134M130 156V22h15v134M50 42h80M50 137h80"/><path className="figure-accent" d="M17 84h146M24 66v36M34 58v52M146 58v52M156 66v36"/><circle cx="90" cy="84" r="9"/><path d="M64 120h52M70 120v36M110 120v36"/></svg>;
+  if (variant === 'intake') return <svg className="page-hero-figure" viewBox="0 0 180 180" aria-hidden="true"><path d="M24 40h99v67H68l-28 23v-23H24z"/><path d="M66 120v22h47l24 19v-19h20V79h-24M47 67h54M47 82h37"/><path className="figure-accent" d="M112 101h22M123 90v22"/></svg>;
+  if (variant === 'legal') return <svg className="page-hero-figure" viewBox="0 0 180 180" aria-hidden="true"><path d="M42 20h68l28 28v112H42zM110 20v29h28M62 75h56M62 94h56M62 113h32"/><path className="figure-accent" d="M112 111l23 9v17c0 14-9 22-23 28-14-6-23-14-23-28v-17zM102 137l7 7 14-17"/></svg>;
+  return null;
+}
+
+export function PageShell({ children, eyebrow, title, outline, intro, variant = 'default', cue }) {
+  return <><ScrollReveal /><SiteHeader /><main><section className={`page-hero page-hero-${variant} reveal`}><HeroFigure variant={variant} /><p className="eyebrow"><span />{eyebrow}</p><div className="page-hero-heading"><h1>{title}<br /><em>{outline}</em></h1>{cue && <p className="page-hero-cue"><span>{cue}</span></p>}</div>{intro && <p className="page-hero-intro">{intro}</p>}</section>{children}</main><SiteFooter /></>;
 }
