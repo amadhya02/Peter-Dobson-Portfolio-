@@ -7,23 +7,23 @@ export default function ScrollReveal() {
     const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-process');
     if (!elements.length) return undefined;
 
+    if (!('IntersectionObserver' in window)) {
+      elements.forEach((element) => element.classList.add('revealed'));
+      return undefined;
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('revealed');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
     elements.forEach((element) => observer.observe(element));
-
-    // Safety net: content must never stay permanently invisible if the
-    // observer can't fire for some reason (e.g. a backgrounded tab, or
-    // any future class-name mismatch like the one this file just had).
-    const fallback = setTimeout(() => {
-      elements.forEach((element) => element.classList.add('revealed'));
-    }, 2000);
 
     return () => {
       observer.disconnect();
-      clearTimeout(fallback);
     };
   }, []);
 
