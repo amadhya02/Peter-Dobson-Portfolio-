@@ -95,3 +95,4 @@ footer{max-width:none;margin:0;padding:0;display:block;background:#11120f;color:
 @media(max-width:600px){footer .footer-inner{grid-template-columns:1fr;padding:48px 20px 28px}.footer-inner .footer-links{justify-content:flex-start}.footer-inner .footer-contact{align-items:flex-start}.footer-inner .copyright{text-align:left}}
 ::selection{background:var(--lime);color:var(--ink)}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+@media(max-width:600px){.site-header{gap:8px}.theme-toggle{width:38px;height:38px;flex-basis:38px}.menu-button{width:38px;height:38px;flex:0 0 38px}.gym-card,.gym-card>*,.gym-feature,.gym-feature>*{min-width:0;max-width:100%}}
