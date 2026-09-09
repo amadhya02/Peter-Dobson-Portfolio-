@@ -1,6 +1,7 @@
 'use client';
 
 import { Fragment } from 'react';
+import Image from 'next/image';
 import { SiteFooter, SiteHeader } from '../components/SiteChrome';
 import ScrollReveal from '../components/ScrollReveal';
 import TrainingIcon from '../components/TrainingIcon';
@@ -25,7 +26,7 @@ export default function Home() {
             <div className="hero-proof">{home.hero.proof.map((item) => <div key={item.value}><strong>{item.value}</strong><span>{item.labelLine1}<br />{item.labelLine2}</span></div>)}</div>
           </div>
           <div className="hero-visual reveal-right">
-            <div className="image-frame"><img src={media.heroPhoto} alt={media.heroPhotoAlt} /></div>
+            <div className="image-frame"><Image src={media.heroPhoto} alt={media.heroPhotoAlt} fill sizes="(max-width: 900px) 100vw, 620px" priority /></div>
             <div className="status-pill"><span /> {home.hero.statusPill}</div><div className="hero-stamp"><span>{home.hero.stampLine}</span><b>{home.hero.stampMonogram}</b></div>
           </div>
         </section>
@@ -56,7 +57,7 @@ export default function Home() {
         </section>
 
         <section className="section about" id="about">
-          <div className="about-visual"><img src={media.heroPhoto} alt="Peter Dobson, personal trainer" /><div className="lime-block">{home.about.visualHeadingLine1}<br />{home.about.visualHeadingLine2}<br /><em>{home.about.visualHeadingEm}</em></div></div>
+          <div className="about-visual"><Image src={media.heroPhoto} alt="Peter Dobson, personal trainer" fill sizes="(max-width: 900px) 100vw, 50vw" /><div className="lime-block">{home.about.visualHeadingLine1}<br />{home.about.visualHeadingLine2}<br /><em>{home.about.visualHeadingEm}</em></div></div>
           <div className="about-copy"><p className="eyebrow light"><span /> {home.about.eyebrow}</p><h2>{home.about.headingLine1}<br />{home.about.headingLine2} <em>{home.about.headingEm}</em></h2><p className="lead">{home.about.lead}</p><p>{home.about.text}</p><blockquote>“{home.about.quote}”</blockquote><a className="button button-light" href={intakeUrl}>{home.about.cta} <span>↗</span></a></div>
         </section>
 
@@ -65,7 +66,7 @@ export default function Home() {
           <div className="steps reveal-process">{home.process.steps.map((step, i) => <article className="reveal-scale" key={step.number}><b>{step.number}</b><span /><TrainingIcon name={['talk', 'plan', 'progress'][i]} /><h3>{step.title}</h3><p>{step.text}</p></article>)}</div>
         </section>
 
-        <section className="section gym" id="gym"><div className="gym-card reveal"><div className="gym-logo-wrap"><img src={media.gymLogo} alt={media.gymLogoAlt} /></div><div><p className="eyebrow light"><span /> {home.gym.eyebrow}</p><h2>{home.gym.headingLine1}<br /><em>{home.gym.headingEm}</em></h2><p>{home.gym.text}</p><div className="gym-actions"><a className="button button-light" href="https://truenorthgym.nl/en">{home.gym.primaryCta} <span>↗</span></a><a className="text-link light-link" href="https://peterdobsonfitness.virtuagym.com/webshop/product?id=b62540dd56761c58445701c5df843d0192b6&amp;club=OVhlSHR2aDZZREJGZ1gyZlRZdjdvZz09">{home.gym.secondaryCta}</a></div></div></div></section>
+        <section className="section gym" id="gym"><div className="gym-card reveal"><div className="gym-logo-wrap"><Image src={media.gymLogo} alt={media.gymLogoAlt} width={800} height={800} style={{ height: 'auto' }} /></div><div><p className="eyebrow light"><span /> {home.gym.eyebrow}</p><h2>{home.gym.headingLine1}<br /><em>{home.gym.headingEm}</em></h2><p>{home.gym.text}</p><div className="gym-actions"><a className="button button-light" href="https://truenorthgym.nl/en">{home.gym.primaryCta} <span>↗</span></a><a className="text-link light-link" href="https://peterdobsonfitness.virtuagym.com/webshop/product?id=b62540dd56761c58445701c5df843d0192b6&amp;club=OVhlSHR2aDZZREJGZ1gyZlRZdjdvZz09">{home.gym.secondaryCta}</a></div></div></div></section>
 
         <section className="section final-cta"><p className="eyebrow"><span /> {home.finalCta.eyebrow}</p><h2>{home.finalCta.headingLine1}<br />{home.finalCta.headingLine2} <em>{home.finalCta.headingEm}</em></h2><p>{home.finalCta.text}</p><a className="button" href={intakeUrl}>{home.finalCta.cta} <span>↗</span></a></section>
       </main>

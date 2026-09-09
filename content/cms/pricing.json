@@ -26,10 +26,10 @@
     },
     {
       "tag": "Kickstart",
-      "title": "Monthly",
+      "title": "Two sessions",
       "price": "€150",
       "suffix": "/ month",
-      "text": "A three-month contract including two sessions, an individual schedule and consistent feedback.",
+      "text": "A 3-month contract to kickstart your training, including two sessions, an individual schedule and consistent feedback.",
       "includes": ["Two coached sessions", "Individual schedule", "Consistent feedback"],
       "featured": false
     },
