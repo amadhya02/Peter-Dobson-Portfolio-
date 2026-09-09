@@ -26,7 +26,7 @@ export function ThemeToggle() {
 }
 
 export function Brand({ footer = false }) {
-  return <Link className={`brand${footer ? ' footer-brand' : ''}`} href="/" aria-label="Peter Dobson Fitness home"><span className="brand-mark" aria-hidden="true"><i /><b /><strong /><b /><i /></span><span>{shared.brand.name}<small>{shared.brand.tagline}</small></span></Link>;
+  return <Link className={`brand brand-logo${footer ? ' footer-brand' : ''}`} href="/" aria-label="Peter Dobson Fitness home"><span className="logo-symbol" aria-hidden="true"><svg viewBox="0 0 96 40"><rect className="logo-bar" x="5" y="18.5" width="86" height="3" rx="1.5"/><g className="logo-plates"><rect x="2" y="14" width="5" height="12" rx="1"/><rect x="8" y="9" width="6" height="22" rx="1"/><rect x="15" y="4" width="7" height="32" rx="1"/><rect className="logo-collar" x="24" y="12" width="5" height="16" rx="1"/><rect x="89" y="14" width="5" height="12" rx="1"/><rect x="82" y="9" width="6" height="22" rx="1"/><rect x="74" y="4" width="7" height="32" rx="1"/><rect className="logo-collar" x="67" y="12" width="5" height="16" rx="1"/></g><path className="logo-knurl" d="M34 17v6m4-6v6m20-6v6m4-6v6"/><rect className="logo-accent" x="46" y="16" width="4" height="8" rx="2"/></svg></span><span className="logo-copy"><strong>{shared.brand.name}</strong><small>{shared.brand.tagline}</small></span></Link>;
 }
 
 export function SiteHeader() {

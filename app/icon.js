@@ -1,29 +1,6 @@
 import { ImageResponse } from 'next/og';
-
 export const size = { width: 32, height: 32 };
 export const contentType = 'image/png';
-
-const bars = [9, 14, 19, 14, 9];
-
 export default function Icon() {
-  return new ImageResponse(
-    (
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: 2,
-          background: '#e8a93d',
-        }}
-      >
-        {bars.map((h, i) => (
-          <div key={i} style={{ display: 'flex', width: i === 2 ? 4 : 2, height: h, background: '#15171a' }} />
-        ))}
-      </div>
-    ),
-    { ...size }
-  );
+  return new ImageResponse(<div style={{width:32,height:32,display:'flex',alignItems:'center',justifyContent:'center',background:'#121310'}}><div style={{width:28,height:18,display:'flex',position:'relative'}}><div style={{display:'flex',position:'absolute',left:1,right:1,top:8,height:2,borderRadius:1,background:'#f2eee5'}}/><div style={{display:'flex',position:'absolute',left:2,top:5,width:2,height:8,background:'#f2eee5'}}/><div style={{display:'flex',position:'absolute',left:5,top:2,width:3,height:14,background:'#f2eee5'}}/><div style={{display:'flex',position:'absolute',left:9,top:5,width:2,height:8,background:'#f2eee5'}}/><div style={{display:'flex',position:'absolute',right:2,top:5,width:2,height:8,background:'#f2eee5'}}/><div style={{display:'flex',position:'absolute',right:5,top:2,width:3,height:14,background:'#f2eee5'}}/><div style={{display:'flex',position:'absolute',right:9,top:5,width:2,height:8,background:'#f2eee5'}}/><div style={{display:'flex',position:'absolute',left:13,top:6,width:2,height:6,borderRadius:1,background:'#d3ae70'}}/></div></div>,{...size});
 }

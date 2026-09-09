@@ -1,29 +1,6 @@
 import { ImageResponse } from 'next/og';
-
 export const size = { width: 180, height: 180 };
 export const contentType = 'image/png';
-
-const bars = [50, 80, 108, 80, 50];
-
 export default function AppleIcon() {
-  return new ImageResponse(
-    (
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: 12,
-          background: '#e8a93d',
-        }}
-      >
-        {bars.map((h, i) => (
-          <div key={i} style={{ display: 'flex', width: i === 2 ? 22 : 12, height: h, background: '#15171a' }} />
-        ))}
-      </div>
-    ),
-    { ...size }
-  );
+  return new ImageResponse(<div style={{width:180,height:180,display:'flex',alignItems:'center',justifyContent:'center',background:'#121310'}}><div style={{width:142,height:82,display:'flex',position:'relative'}}><div style={{display:'flex',position:'absolute',left:3,right:3,top:37,height:8,borderRadius:4,background:'#f2eee5'}}/><div style={{display:'flex',position:'absolute',left:5,top:27,width:10,height:28,borderRadius:3,background:'#f2eee5'}}/><div style={{display:'flex',position:'absolute',left:19,top:13,width:15,height:56,borderRadius:3,background:'#f2eee5'}}/><div style={{display:'flex',position:'absolute',left:38,top:23,width:10,height:36,borderRadius:3,background:'#f2eee5'}}/><div style={{display:'flex',position:'absolute',right:5,top:27,width:10,height:28,borderRadius:3,background:'#f2eee5'}}/><div style={{display:'flex',position:'absolute',right:19,top:13,width:15,height:56,borderRadius:3,background:'#f2eee5'}}/><div style={{display:'flex',position:'absolute',right:38,top:23,width:10,height:36,borderRadius:3,background:'#f2eee5'}}/><div style={{display:'flex',position:'absolute',left:66,top:27,width:10,height:28,borderRadius:5,background:'#d3ae70'}}/></div></div>,{...size});
 }
