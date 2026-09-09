@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import shared from '../content/cms/shared.json';
 import ScrollReveal from './ScrollReveal';
 import TrainingIcon from './TrainingIcon';
@@ -34,8 +34,30 @@ export function Brand({ footer = false }) {
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [logoIntro, setLogoIntro] = useState(false);
+  const menuButtonRef = useRef(null);
+  const navRef = useRef(null);
   const pathname = usePathname();
   useEffect(() => { document.body.classList.toggle('menu-open', open); return () => document.body.classList.remove('menu-open'); }, [open]);
+  useEffect(() => {
+    if (!open) return undefined;
+    const nav = navRef.current;
+    const focusable = [...nav.querySelectorAll('a[href]')];
+    focusable[0]?.focus();
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+        requestAnimationFrame(() => menuButtonRef.current?.focus());
+        return;
+      }
+      if (event.key !== 'Tab' || !focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [open]);
   useEffect(() => {
     if (!sessionStorage.getItem('pdf-logo-seen')) {
       sessionStorage.setItem('pdf-logo-seen', '1');
@@ -44,11 +66,11 @@ export function SiteHeader() {
   }, []);
   const close = () => setOpen(false);
   const navLink = (href, label, className = '') => <Link className={`${className}${pathname === href ? ' active' : ''}`.trim()} href={href} onClick={close} aria-current={pathname === href ? 'page' : undefined}>{label}</Link>;
-  return <header className={`site-header${logoIntro ? ' logo-intro' : ''}`}><Brand /><button className="menu-button" type="button" aria-label="Toggle navigation" aria-expanded={open} aria-controls="main-nav" onClick={() => setOpen(!open)}><span /><span /></button><nav id="main-nav" className={open ? 'open' : ''} aria-label="Primary navigation">{navLink('/coaching', shared.nav.coaching)}{navLink('/about', shared.nav.about)}{navLink('/gym', shared.nav.gym)}{navLink('/pricing', shared.nav.pricing)}{navLink('/intake', shared.nav.bookIntakeMobile, 'nav-intake')}<div className="mobile-nav-meta"><a href={`mailto:${shared.footer.email}`}>{shared.footer.email}</a><a href={shared.footer.instagramUrl}>{shared.footer.instagramLabel}</a></div></nav><ThemeToggle /><Link className={`button button-small header-cta${pathname === '/intake' ? ' active' : ''}`} href="/intake" aria-current={pathname === '/intake' ? 'page' : undefined}>{shared.nav.headerCta} <span>↗</span></Link></header>;
+  return <header className={`site-header${logoIntro ? ' logo-intro' : ''}`}><Brand /><button ref={menuButtonRef} className="menu-button" type="button" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="main-nav" onClick={() => setOpen(!open)}><span /><span /></button><nav ref={navRef} id="main-nav" className={open ? 'open' : ''} aria-label="Primary navigation">{navLink('/coaching', shared.nav.coaching)}{navLink('/about', shared.nav.about)}{navLink('/gym', shared.nav.gym)}{navLink('/pricing', shared.nav.pricing)}{navLink('/intake', shared.nav.bookIntakeMobile, 'nav-intake')}<div className="mobile-nav-meta"><a href={`mailto:${shared.footer.email}`}>{shared.footer.email}</a><a className="external-link" href={shared.footer.instagramUrl} target="_blank" rel="noopener noreferrer">{shared.footer.instagramLabel}</a></div></nav><ThemeToggle /><Link className={`button button-small header-cta${pathname === '/intake' ? ' active' : ''}`} href="/intake" aria-current={pathname === '/intake' ? 'page' : undefined}>{shared.nav.headerCta} <span>↗</span></Link></header>;
 }
 
 export function SiteFooter() {
-  return <footer><TrainingIcon name="barbell" className="footer-watermark" /><div className="footer-inner"><Brand footer /><div className="footer-links"><Link href="/coaching">{shared.footer.coaching}</Link><Link href="/about">{shared.footer.about}</Link><Link href="/gym">{shared.footer.gymSubpage}</Link><Link href="/privacy">{shared.footer.privacy}</Link><Link href="/terms">{shared.footer.terms}</Link></div><div className="footer-contact"><a href={`mailto:${shared.footer.email}`}>{shared.footer.email}</a><a href={shared.footer.instagramUrl}>{shared.footer.instagramLabel}</a></div><p className="copyright">© {new Date().getFullYear()} {shared.footer.copyrightSuffix}</p></div></footer>;
+  return <footer><TrainingIcon name="barbell" className="footer-watermark" /><div className="footer-inner"><Brand footer /><div className="footer-links"><Link href="/coaching">{shared.footer.coaching}</Link><Link href="/about">{shared.footer.about}</Link><Link href="/gym">{shared.footer.gymSubpage}</Link><Link href="/privacy">{shared.footer.privacy}</Link><Link href="/terms">{shared.footer.terms}</Link></div><div className="footer-contact"><a href={`mailto:${shared.footer.email}`}>{shared.footer.email}</a><a className="external-link" href={shared.footer.instagramUrl} target="_blank" rel="noopener noreferrer">{shared.footer.instagramLabel}</a></div><p className="copyright">© {new Date().getFullYear()} {shared.footer.copyrightSuffix}</p></div></footer>;
 }
 
 function HeroFigure({ variant }) {

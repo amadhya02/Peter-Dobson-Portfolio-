@@ -1,5 +1,3 @@
-'use client';
-
 import { Fragment } from 'react';
 import Image from 'next/image';
 import { SiteFooter, SiteHeader } from '../components/SiteChrome';
@@ -48,7 +46,7 @@ export default function Home() {
                     <p className="card-label">{card.label}</p>
                     <h3>{card.title}</h3>
                     <p>{card.text}</p>
-                    <a href={hrefs[i]}>{card.cta} <span>→</span></a>
+                  <a href={hrefs[i]} className={hrefs[i].startsWith('http') ? 'external-link' : undefined} target={hrefs[i].startsWith('http') ? '_blank' : undefined} rel={hrefs[i].startsWith('http') ? 'noopener noreferrer' : undefined}>{card.cta} <span>→</span></a>
                   </div>
                 </article>
               );
@@ -66,7 +64,7 @@ export default function Home() {
           <div className="steps reveal-process">{home.process.steps.map((step, i) => <article className="reveal-scale" key={step.number}><b>{step.number}</b><span /><TrainingIcon name={['talk', 'plan', 'progress'][i]} /><h3>{step.title}</h3><p>{step.text}</p></article>)}</div>
         </section>
 
-        <section className="section gym" id="gym"><div className="gym-card reveal"><div className="gym-logo-wrap"><Image src={media.gymLogo} alt={media.gymLogoAlt} width={800} height={800} style={{ height: 'auto' }} /></div><div><p className="eyebrow light"><span /> {home.gym.eyebrow}</p><h2>{home.gym.headingLine1}<br /><em>{home.gym.headingEm}</em></h2><p>{home.gym.text}</p><div className="gym-actions"><a className="button button-light" href="https://truenorthgym.nl/en">{home.gym.primaryCta} <span>↗</span></a><a className="text-link light-link" href="https://peterdobsonfitness.virtuagym.com/webshop/product?id=b62540dd56761c58445701c5df843d0192b6&amp;club=OVhlSHR2aDZZREJGZ1gyZlRZdjdvZz09">{home.gym.secondaryCta}</a></div></div></div></section>
+        <section className="section gym" id="gym"><div className="gym-card reveal"><div className="gym-logo-wrap"><Image src={media.gymLogo} alt={media.gymLogoAlt} width={800} height={800} style={{ height: 'auto' }} /></div><div><p className="eyebrow light"><span /> {home.gym.eyebrow}</p><h2>{home.gym.headingLine1}<br /><em>{home.gym.headingEm}</em></h2><p>{home.gym.text}</p><div className="gym-actions"><a className="button button-light external-link" href="https://truenorthgym.nl/en" target="_blank" rel="noopener noreferrer">{home.gym.primaryCta} <span>↗</span></a><a className="text-link light-link external-link" href="https://peterdobsonfitness.virtuagym.com/webshop/product?id=b62540dd56761c58445701c5df843d0192b6&amp;club=OVhlSHR2aDZZREJGZ1gyZlRZdjdvZz09" target="_blank" rel="noopener noreferrer">{home.gym.secondaryCta}</a></div></div></div></section>
 
         <section className="section final-cta"><p className="eyebrow"><span /> {home.finalCta.eyebrow}</p><h2>{home.finalCta.headingLine1}<br />{home.finalCta.headingLine2} <em>{home.finalCta.headingEm}</em></h2><p>{home.finalCta.text}</p><a className="button" href={intakeUrl}>{home.finalCta.cta} <span>↗</span></a></section>
       </main>

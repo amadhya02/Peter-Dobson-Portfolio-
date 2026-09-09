@@ -1,11 +1,11 @@
 {
-  "siteUrl": "https://peter-portfolio-blush.vercel.app",
+  "siteUrl": "https://peterdobsonfitness.nl",
   "home": { "title": "Peter Dobson, Personal Training Amsterdam", "description": "Personal training in Amsterdam with Peter Dobson. Personalised coaching, strength training and small group classes at TrueNorth Gym." },
-  "about": { "title": "About Peter | Peter Dobson Fitness", "description": "Meet Amsterdam personal trainer Peter Dobson." },
-  "coaching": { "title": "Personal Coaching | Peter Dobson Fitness", "description": "One-to-one and small group strength coaching in Amsterdam." },
-  "gym": { "title": "TrueNorth Gym | Peter Dobson Fitness", "description": "Train with Peter at TrueNorth Gym in Amsterdam." },
-  "pricing": { "title": "Personal Training Prices | Peter Dobson Fitness", "description": "Personal training packages and prices in Amsterdam." },
+  "about": { "title": "About Peter | Peter Dobson Fitness", "description": "Meet Peter Dobson, an Amsterdam personal trainer focused on practical strength, confident movement and sustainable progress." },
+  "coaching": { "title": "Personal Coaching | Peter Dobson Fitness", "description": "Explore one-to-one personal training, small group coaching and focused strength sessions with Peter Dobson in Amsterdam." },
+  "gym": { "title": "TrueNorth Gym | Peter Dobson Fitness", "description": "Train with Peter Dobson at TrueNorth Gym in Amsterdam, with specialist strength equipment, personal coaching and small group classes." },
+  "pricing": { "title": "Personal Training Prices | Peter Dobson Fitness", "description": "Compare personal training prices and coaching packages with Peter Dobson in Amsterdam, from single sessions to long-term programmes." },
   "intake": { "title": "Book an Intake | Peter Dobson Fitness", "description": "Book a free personal training intake with Peter Dobson in Amsterdam." },
-  "privacy": { "title": "Privacy Policy | Peter Dobson Fitness", "description": "" },
-  "terms": { "title": "Algemene Voorwaarden | Peter Dobson Fitness", "description": "" }
+  "privacy": { "title": "Privacy Policy | Peter Dobson Fitness", "description": "Lees hoe Peter Dobson Fitness persoonsgegevens verzamelt, gebruikt, bewaart en beschermt." },
+  "terms": { "title": "Algemene Voorwaarden | Peter Dobson Fitness", "description": "Lees de algemene voorwaarden voor personal training en coaching bij Peter Dobson Fitness in Amsterdam." }
 }

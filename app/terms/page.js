@@ -1,14 +1,15 @@
 import { PageShell } from '../../components/SiteChrome';
-import seo from '../../content/cms/seo.json';
+import { pageMetadata } from '../../lib/metadata';
 import legal from '../../content/cms/legal.json';
 
-export const metadata = { title: seo.terms.title, description: seo.terms.description };
+export const metadata = pageMetadata('terms', '/terms', 'nl_NL');
 
 const { terms } = legal;
 
 export default function TermsPage() {
   return <PageShell eyebrow={terms.hero.eyebrow} title={terms.hero.title} outline={terms.hero.outline} intro={terms.hero.intro} variant="legal" cue="Service terms">
-    <article className="legal-document subpage-section">
+    <article className="legal-document subpage-section" lang="nl">
+      <p className="language-note">NL · Deze pagina is in het Nederlands</p>
       <div className="legal-meta">
         <p>{terms.metaLeftLines.map((line, i) => <span key={i}>{i > 0 && <br />}{i === 0 ? <b>{line}</b> : line}</span>)}</p>
         <p>{terms.metaRightLines.map((line, i) => <span key={i}>{i > 0 && <br />}{line}</span>)}</p>

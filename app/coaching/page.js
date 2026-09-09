@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { PageShell } from '../../components/SiteChrome';
-import seo from '../../content/cms/seo.json';
+import { pageMetadata } from '../../lib/metadata';
 import coaching from '../../content/cms/coaching.json';
 
-export const metadata = { title: seo.coaching.title, description: seo.coaching.description };
+export const metadata = pageMetadata('coaching', '/coaching');
 
 const offerLinks = [
   { type: 'link', href: '/intake', arrow: '↗', className: 'button' },

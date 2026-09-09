@@ -12,10 +12,8 @@ const routes = [
 ];
 
 export default function sitemap() {
-  const lastModified = new Date();
   return routes.map((route) => ({
     url: `${seo.siteUrl}${route.path}`,
-    lastModified,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
   }));

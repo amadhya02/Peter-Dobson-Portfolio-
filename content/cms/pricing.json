@@ -12,6 +12,7 @@
       "price": "€60",
       "suffix": "from / session",
       "text": "Weekly personal training for three months, ideal for building momentum, confidence and a consistent routine.",
+      "recommendedFor": "Recommended for building a consistent training rhythm.",
       "includes": ["Weekly personal training", "Personalised programme", "Progress reviews"],
       "featured": true
     },
@@ -21,6 +22,7 @@
       "price": "€54",
       "suffix": "from / session",
       "text": "Ongoing coaching at the best session rate, for people ready to make strength training a lasting habit.",
+      "recommendedFor": "Recommended for committed, long-term progress.",
       "includes": ["Ongoing personal training", "Personalised programme", "Programme updates"],
       "featured": false
     },
@@ -29,8 +31,9 @@
       "title": "Two sessions",
       "price": "€150",
       "suffix": "/ month",
-      "text": "A 3-month contract to kickstart your training, including two sessions, an individual schedule and consistent feedback.",
-      "includes": ["Two coached sessions", "Individual schedule", "Consistent feedback"],
+      "text": "A 3-month contract to kickstart your training, including two coached sessions each month, an individual schedule and consistent feedback.",
+      "recommendedFor": "Recommended for starting with structure and feedback.",
+      "includes": ["Two coached sessions each month", "Individual schedule", "Consistent feedback"],
       "featured": false
     },
     {
@@ -39,6 +42,7 @@
       "price": "€70",
       "suffix": "/ session",
       "text": "A focused one-off session for a specific lift or goal, with no ongoing contract.",
+      "recommendedFor": "Recommended for one specific lift or training question.",
       "includes": ["One focused session", "Technique analysis", "Actionable feedback"],
       "featured": false
     }

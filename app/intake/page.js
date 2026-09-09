@@ -1,11 +1,11 @@
 import { PageShell } from '../../components/SiteChrome';
 import IntakeForm from '../../components/IntakeForm';
 import shared from '../../content/cms/shared.json';
-import seo from '../../content/cms/seo.json';
+import { pageMetadata } from '../../lib/metadata';
 import intake from '../../content/cms/intake.json';
 import TrainingIcon from '../../components/TrainingIcon';
 
-export const metadata = { title: seo.intake.title, description: seo.intake.description };
+export const metadata = pageMetadata('intake', '/intake');
 
 export default function IntakePage() {
   return <PageShell eyebrow={intake.hero.eyebrow} title={intake.hero.title} outline={intake.hero.outline} intro={intake.hero.intro} variant="intake" cue="Free initial conversation">
